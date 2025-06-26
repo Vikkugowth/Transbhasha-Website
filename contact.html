@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Transbhasha</title>
+    <meta name="description" content="Get in touch with Transbhasha for AI-powered language technology solutions.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        background: 'hsl(var(--background))',
+                        foreground: 'hsl(var(--foreground))',
+                        card: 'hsl(var(--card))',
+                        'card-foreground': 'hsl(var(--card-foreground))',
+                        primary: 'hsl(var(--primary))',
+                        'primary-foreground': 'hsl(var(--primary-foreground))',
+                        secondary: 'hsl(var(--secondary))',
+                        'secondary-foreground': 'hsl(var(--secondary-foreground))',
+                        muted: 'hsl(var(--muted))',
+                        'muted-foreground': 'hsl(var(--muted-foreground))',
+                        border: 'hsl(var(--border))',
+                        destructive: 'hsl(var(--destructive))',
+                        'destructive-foreground': 'hsl(var(--destructive-foreground))',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            from: { opacity: '0', transform: 'translateY(30px)' },
+                            to: { opacity: '1', transform: 'translateY(0)' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for theming */
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 222.2 84% 4.9%;
+            --card: 0 0% 100%;
+            --card-foreground: 222.2 84% 4.9%;
+            --popover: 0 0% 100%;
+            --popover-foreground: 222.2 84% 4.9%;
+            --primary: 221.2 83.2% 53.3%;
+            --primary-foreground: 210 40% 98%;
+            --secondary: 210 40% 96%;
+            --secondary-foreground: 222.2 84% 4.9%;
+            --muted: 210 40% 96%;
+            --muted-foreground: 215.4 16.3% 46.9%;
+            --accent: 210 40% 96%;
+            --accent-foreground: 222.2 84% 4.9%;
+            --destructive: 0 84.2% 60.2%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 214.3 31.8% 91.4%;
+            --input: 214.3 31.8% 91.4%;
+            --ring: 221.2 83.2% 53.3%;
+        }
+
+        .dark {
+            --background: 222.2 84% 4.9%;
+            --foreground: 210 40% 98%;
+            --card: 222.2 84% 4.9%;
+            --card-foreground: 210 40% 98%;
+            --popover: 222.2 84% 4.9%;
+            --popover-foreground: 210 40% 98%;
+            --primary: 217.2 91.2% 59.8%;
+            --primary-foreground: 222.2 84% 4.9%;
+            --secondary: 217.2 32.6% 17.5%;
+            --secondary-foreground: 210 40% 98%;
+            --muted: 217.2 32.6% 17.5%;
+            --muted-foreground: 215 20.2% 65.1%;
+            --accent: 217.2 32.6% 17.5%;
+            --accent-foreground: 210 40% 98%;
+            --destructive: 0 62.8% 30.6%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 217.2 32.6% 17.5%;
+            --input: 217.2 32.6% 17.5%;
+            --ring: 224.3 76.3% 94.1%;
+        }
+
+        /* Animation classes */
+        .animate-fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: hsl(var(--muted));
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: hsl(var(--border));
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: hsl(var(--muted-foreground));
+        }
+
+    </style>
+</head>
+<body class="min-h-screen bg-background text-foreground">
+    <!-- Header (same as about.html) -->
+    <header class="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <svg class="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 8l6 6"/>
+                        <path d="m4 14 6-6 2-3"/>
+                        <path d="M2 5h12"/>
+                        <path d="M7 2h1"/>
+                        <path d="m22 22-5-10-5 10"/>
+                        <path d="M14 18h6"/>
+                    </svg>
+                    <span class="text-xl font-bold">Transbhasha</span>
+                </a>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sm font-medium text-foreground hover:text-primary transition-colors">Home</a>
+                    
+                    <!-- Company Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center space-x-1 text-sm font-medium text-foreground hover:text-primary transition-colors">
+                            <span>Company</span>
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-64 bg-card border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="p-2">
+                                <a href="about.html" class="block p-3 rounded-md hover:bg-muted transition-colors">
+                                    <div class="font-medium text-card-foreground">About Us</div>
+                                    <div class="text-sm text-muted-foreground">Learn about our mission and vision</div>
+                                </a>
+                                <a href="team.html" class="block p-3 rounded-md hover:bg-muted transition-colors">
+                                    <div class="font-medium text-card-foreground">Our Team</div>
+                                    <div class="text-sm text-muted-foreground">Meet the people behind Transbhasha</div>
+                                </a>
+                                <a href="gallery.html" class="block p-3 rounded-md hover:bg-muted transition-colors">
+                                    <div class="font-medium text-card-foreground">Gallery</div>
+                                    <div class="text-sm text-muted-foreground">Our journey in pictures</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Products Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center space-x-1 text-sm font-medium text-foreground hover:text-primary transition-colors">
+                            <span>Products</span>
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-64 bg-card border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="p-2">
+                                <a href="api-services.html" class="block p-3 rounded-md hover:bg-muted transition-colors">
+                                    <div class="font-medium text-card-foreground">API Services</div>
+                                    <div class="text-sm text-muted-foreground">Powerful APIs for ASR, MT, and TTS</div>
+                                </a>
+                                <a href="translingua.html" class="block p-3 rounded-md hover:bg-muted transition-colors">
+                                    <div class="font-medium text-card-foreground">Translingua</div>
+                                    <div class="text-sm text-muted-foreground">Breaking language barriers in video content</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="careers.html" class="text-sm font-medium text-foreground hover:text-primary transition-colors">Careers</a>
+                    <a href="blog.html" class="text-sm font-medium text-foreground hover:text-primary transition-colors">Blog</a>
+                    <a href="contact.html" class="text-sm font-medium text-foreground hover:text-primary transition-colors">Contact</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button id="themeToggle" class="p-2 rounded-md hover:bg-muted transition-colors">
+                        <svg class="sun-icon w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                        </svg>
+                        <svg class="moon-icon w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </button>
+                    <a href="contact.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-primary-foreground bg-primary rounded-md hover:bg-primary/90 transition-colors">
+                        Access API Platform
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                          <polyline points="15 3 21 3 21 9"/>
+                          <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                    </a>
+                    <button id="mobileMenuToggle" class="md:hidden p-2 rounded-md hover:bg-muted transition-colors">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6"/>
+                            <line x1="3" y1="12" x2="21" y2="12"/>
+                            <line x1="3" y1="18" x2="21" y2="18"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden border-t border-border bg-background hidden">
+            <nav class="px-4 py-4 space-y-2">
+                <a href="index.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">About Us</a>
+                <a href="team.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Our Team</a>
+                <a href="gallery.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Gallery</a>
+                <a href="api-services.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">API Services</a>
+                <a href="translingua.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Translingua</a>
+                <a href="careers.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Careers</a>
+                <a href="blog.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Blog</a>
+                <a href="contact.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Contact</a>
+                <a href="contact.html" class="block mt-4 px-4 py-2 text-sm font-medium text-primary-foreground bg-primary rounded-md hover:bg-primary/90 transition-colors text-center">Get Started</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-20 bg-background">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up">Get in Touch</h1>
+                    <p class="text-xl text-muted-foreground mb-8 animate-fade-in-up delay-100">Ready to break language barriers? Contact us to learn more about our AI-powered language technology solutions.</p>
+                    <div class="animate-fade-in-up delay-200">
+                        <a href="#contact-form" class="text-primary-foreground bg-primary rounded-md hover:bg-primary/90  px-8 py-4 rounded-lg text-lg font-semibold transition-colors">Start Conversation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Information & Form Section -->
+        <section class="py-16 bg-muted">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <!-- Contact Information -->
+                    <div class="animate-fade-in-up mb-16">
+                        <h2 class="text-3xl font-bold mb-8">Contact Information</h2>
+                        
+                        <div class="grid md:grid-cols-3 gap-8 mb-12">
+                            <div class="flex items-start space-x-4">
+                                <div class="text-blue-500 flex-shrink-0">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                        <polyline points="22,6 12,13 2,6"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold mb-1">Email</h3>
+                                    <p class="mb-1">contact@transbhasha.com</p>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400">Send us an email anytime</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="text-blue-500 flex-shrink-0">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold mb-1">Phone</h3>
+                                    <p class="mb-1">+91 12345 67890</p>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400">Mon-Fri from 9am to 6pm IST</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="text-blue-500 flex-shrink-0">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                        <circle cx="12" cy="10" r="3"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold mb-1">Office</h3>
+                                    <p class="mb-1">Bangalore, India</p>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400">Visit our headquarters</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div>
+                            <h2 class="text-3xl font-bold mb-8">Quick Actions</h2>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                                    <div class="flex items-center space-x-3 mb-4">
+                                        <svg class="w-6 h-6 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                            <polyline points="14,2 14,8 20,8"/>
+                                            <line x1="16" y1="13" x2="8" y2="13"/>
+                                            <line x1="16" y1="17" x2="8" y2="17"/>
+                                            <polyline points="10,9 9,9 8,9"/>
+                                        </svg>
+                                        <h3 class="text-lg font-semibold">Request Demo</h3>
+                                    </div>
+                                    <p class="text-slate-600 dark:text-slate-300 mb-4">See our platform in action</p>
+                                    <a href="#contact-form" class="bg-blue-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-600 transition-colors w-full block text-center">Learn More</a>
+                                </div>
+
+                                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                                    <div class="flex items-center space-x-3 mb-4">
+                                        <svg class="w-6 h-6 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="16,18 22,12 16,6"/>
+                                            <polyline points="8,6 2,12 8,18"/>
+                                        </svg>
+                                        <h3 class="text-lg font-semibold">API Documentation</h3>
+                                    </div>
+                                    <p class="text-slate-600 dark:text-slate-300 mb-4">Technical documentation and guides</p>
+                                    <a href="#contact-form" class="bg-blue-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-600 transition-colors w-full block text-center">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div id="contact-form" class="animate-fade-in-up delay-100">
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl p-8">
+                            <div class="mb-8">
+                                <h2 class="text-3xl font-bold mb-2">Send us a message</h2>
+                                <p class="text-slate-600 dark:text-slate-300">Fill out the form below and we'll get back to you as soon as possible.</p>
+                            </div>
+
+                            <form class="space-y-6" id="contactForm">
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                                        <input type="text" id="name" name="name" placeholder="Your full name" required class="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    </div>
+                                    <div>
+                                        <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                                        <input type="email" id="email" name="email" placeholder="your@email.com" required class="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="company" class="block text-sm font-medium mb-2">Company</label>
+                                    <input type="text" id="company" name="company" placeholder="Your company name" class="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                </div>
+
+                                <div>
+                                    <label for="inquiry-type" class="block text-sm font-medium mb-2">Inquiry Type</label>
+                                    <select id="inquiry-type" name="inquiry-type" class="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        <option value="">Select inquiry type</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="demo">Request Demo</option>
+                                        <option value="api">API Integration</option>
+                                        <option value="partnership">Partnership</option>
+                                        <option value="support">Technical Support</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="subject" class="block text-sm font-medium mb-2">Subject</label>
+                                    <input type="text" id="subject" name="subject" placeholder="Brief subject line" class="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                </div>
+
+                                <div>
+                                    <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                                    <textarea id="message" name="message" placeholder="Tell us more about your requirements..." rows="5" required class="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-vertical min-h-[120px]"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full bg-blue-500 text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-blue-600 transition-colors">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-16 bg-background">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <div class="mb-4">
+                        <svg class="w-12 h-12 text-blue-500 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                            <line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+                    <p class="text-lg text-muted-foreground">Find answers to common questions about our services</p>
+                </div>
+
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl animate-fade-in-up">
+                        <div class="p-6">
+                            <h3 class="text-lg dark:text-slate-400 font-semibold mb-4">How many languages do you support?</h3>
+                            <p class="text-slate-600 dark:text-slate-300">We currently support 22+ Indian languages including Hindi, Tamil, Telugu, Bengali, Marathi, Gujarati, and many more.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl animate-fade-in-up delay-100">
+                        <div class="p-6">
+                            <h3 class="text-lg dark:text-slate-400  font-semibold mb-4">What video formats are supported?</h3>
+                            <p class="text-slate-600 dark:text-slate-300">We support all major video formats including MP4, AVI, MOV, WMV, and more. Our platform automatically handles format conversion.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl animate-fade-in-up delay-200">
+                        <div class="p-6">
+                            <h3 class="text-lg dark:text-slate-400 font-semibold mb-4">How long does processing take?</h3>
+                            <p class="text-slate-600 dark:text-slate-300">Processing time depends on video length and complexity, but typically ranges from a few minutes to an hour for most content.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl animate-fade-in-up delay-300">
+                        <div class="p-6">
+                            <h3 class="text-lg dark:text-slate-400  font-semibold mb-4">Do you offer custom pricing for enterprises?</h3>
+                            <p class="text-slate-600 dark:text-slate-300">Yes, we offer flexible pricing plans for enterprises with custom requirements. Contact our sales team for a personalized quote.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="dark:bg-gray-900 dark:text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <a href="index.html" class="flex items-center space-x-2 mb-4">
+                        <svg class="w-6 h-6 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 8l6 6"/>
+                            <path d="m4 14 6-6 2-3"/>
+                            <path d="M2 5h12"/>
+                            <path d="M7 2h1"/>
+                            <path d="m22 22-5-10-5 10"/>
+                            <path d="M14 18h6"/>
+                        </svg>
+                        <span class="text-xl font-bold">Transbhasha</span>
+                    </a>
+                    <p class="dark:text-gray-400">Breaking language barriers in digital content through AI-powered transcription, translation, and voice-over services.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <nav class="space-y-2">
+                        <a href="about.html" class="block dark:text-gray-400 dark:hover:text-white hover:text-blue-700 transition-colors">About Us</a>
+                        <a href="api-services.html" class="block dark:text-gray-400 dark:hover:text-white hover:text-blue-700 transition-colors">API Services</a>
+                        <a href="translingua.html" class="block dark:text-gray-400 dark:hover:text-white hover:text-blue-700 transition-colors">Translingua</a>
+                        <a href="careers.html" class="block dark:text-gray-400 dark:hover:text-white hover:text-blue-700 transition-colors">Careers</a>
+                        <a href="blog.html" class="block dark:text-gray-400 dark:hover:text-white hover:text-blue-700 transition-colors">Blog</a>
+                    </nav>
+                </div>
+
+                <div>
+                    <h4 class="text-lg  font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-2">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <span class="dark:text-gray-400">contact@transbhasha.com</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <span class="dark:text-gray-400">+91 12345 67890</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span class="dark:text-gray-400">Bangalore, India</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <nav class="space-y-2">
+                        <a href="#" class="block dark:text-gray-400 dark:hover:text-white hover:text-blue-700 transition-colors">Privacy Policy</a>
+                        <a href="#" class="block dark:text-gray-400 dark:hover:text-white transition-colors hover:text-blue-700">Terms of Service</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center dark:text-gray-400">
+                <p>&copy; 2024 Transbhasha. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="contact.js"></script>
+</body>
+</html>

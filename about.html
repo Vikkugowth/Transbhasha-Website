@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Transbhasha</title>
+    <meta name="description" content="Learn about Transbhasha's mission to break language barriers through AI-powered language technology.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        background: 'hsl(var(--background))',
+                        foreground: 'hsl(var(--foreground))',
+                        card: 'hsl(var(--card))',
+                        'card-foreground': 'hsl(var(--card-foreground))',
+                        primary: 'hsl(var(--primary))',
+                        'primary-foreground': 'hsl(var(--primary-foreground))',
+                        secondary: 'hsl(var(--secondary))',
+                        'secondary-foreground': 'hsl(var(--secondary-foreground))',
+                        muted: 'hsl(var(--muted))',
+                        'muted-foreground': 'hsl(var(--muted-foreground))',
+                        border: 'hsl(var(--border))',
+                        destructive: 'hsl(var(--destructive))',
+                        'destructive-foreground': 'hsl(var(--destructive-foreground))',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            from: { opacity: '0', transform: 'translateY(30px)' },
+                            to: { opacity: '1', transform: 'translateY(0)' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for theming */
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 222.2 84% 4.9%;
+            --card: 0 0% 100%;
+            --card-foreground: 222.2 84% 4.9%;
+            --popover: 0 0% 100%;
+            --popover-foreground: 222.2 84% 4.9%;
+            --primary: 221.2 83.2% 53.3%;
+            --primary-foreground: 210 40% 98%;
+            --secondary: 210 40% 96%;
+            --secondary-foreground: 222.2 84% 4.9%;
+            --muted: 210 40% 96%;
+            --muted-foreground: 215.4 16.3% 46.9%;
+            --accent: 210 40% 96%;
+            --accent-foreground: 222.2 84% 4.9%;
+            --destructive: 0 84.2% 60.2%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 214.3 31.8% 91.4%;
+            --input: 214.3 31.8% 91.4%;
+            --ring: 221.2 83.2% 53.3%;
+        }
+
+        .dark {
+            --background: 222.2 84% 4.9%;
+            --foreground: 210 40% 98%;
+            --card: 222.2 84% 4.9%;
+            --card-foreground: 210 40% 98%;
+            --popover: 222.2 84% 4.9%;
+            --popover-foreground: 210 40% 98%;
+            --primary: 217.2 91.2% 59.8%;
+            --primary-foreground: 222.2 84% 4.9%;
+            --secondary: 217.2 32.6% 17.5%;
+            --secondary-foreground: 210 40% 98%;
+            --muted: 217.2 32.6% 17.5%;
+            --muted-foreground: 215 20.2% 65.1%;
+            --accent: 217.2 32.6% 17.5%;
+            --accent-foreground: 210 40% 98%;
+            --destructive: 0 62.8% 30.6%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 217.2 32.6% 17.5%;
+            --input: 217.2 32.6% 17.5%;
+            --ring: 224.3 76.3% 94.1%;
+        }
+
+        /* Animation classes */
+        .animate-fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: hsl(var(--muted));
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: hsl(var(--border));
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: hsl(var(--muted-foreground));
+        }
+
+    </style>
+</head>
+<body class="min-h-screen bg-background text-foreground font-sans antialiased">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <svg class="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 8l6 6"/>
+                        <path d="m4 14 6-6 2-3"/>
+                        <path d="M2 5h12"/>
+                        <path d="M7 2h1"/>
+                        <path d="m22 22-5-10-5 10"/>
+                        <path d="M14 18h6"/>
+                    </svg>
+                    <span class="text-xl font-bold">Transbhasha</span>
+                </a>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sm font-medium text-foreground hover:text-primary transition-colors">Home</a>
+                    
+                    <!-- Company Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center space-x-1 text-sm font-medium text-foreground hover:text-primary transition-colors">
+                            <span>Company</span>
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-64 bg-card border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="p-2">
+                                <a href="about.html" class="block p-3 rounded-md hover:bg-muted transition-colors">
+                                    <div class="font-medium text-card-foreground">About Us</div>
+                                    <div class="text-sm text-muted-foreground">Learn about our mission and vision</div>
+                                </a>
+                                <a href="team.html" class="block p-3 rounded-md hover:bg-muted transition-colors">
+                                    <div class="font-medium text-card-foreground">Our Team</div>
+                                    <div class="text-sm text-muted-foreground">Meet the people behind Transbhasha</div>
+                                </a>
+                                <a href="gallery.html" class="block p-3 rounded-md hover:bg-muted transition-colors">
+                                    <div class="font-medium text-card-foreground">Gallery</div>
+                                    <div class="text-sm text-muted-foreground">Our journey in pictures</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Products Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center space-x-1 text-sm font-medium text-foreground hover:text-primary transition-colors">
+                            <span>Products</span>
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-64 bg-card border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="p-2">
+                                <a href="api-services.html" class="block p-3 rounded-md hover:bg-muted transition-colors">
+                                    <div class="font-medium text-card-foreground">API Services</div>
+                                    <div class="text-sm text-muted-foreground">Powerful APIs for ASR, MT, and TTS</div>
+                                </a>
+                                <a href="translingua.html" class="block p-3 rounded-md hover:bg-muted transition-colors">
+                                    <div class="font-medium text-card-foreground">Translingua</div>
+                                    <div class="text-sm text-muted-foreground">Breaking language barriers in video content</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="careers.html" class="text-sm font-medium text-foreground hover:text-primary transition-colors">Careers</a>
+                    <a href="blog.html" class="text-sm font-medium text-foreground hover:text-primary transition-colors">Blog</a>
+                    <a href="contact.html" class="text-sm font-medium text-foreground hover:text-primary transition-colors">Contact</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button id="themeToggle" class="p-2 rounded-md hover:bg-muted transition-colors">
+                        <svg class="sun-icon w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                        </svg>
+                        <svg class="moon-icon w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </button>
+                    <a href="contact.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-primary-foreground bg-primary rounded-md hover:bg-primary/90 transition-colors">
+                        Access API Platform
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                          <polyline points="15 3 21 3 21 9"/>
+                          <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                    </a>
+                    <button id="mobileMenuToggle" class="md:hidden p-2 rounded-md hover:bg-muted transition-colors">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6"/>
+                            <line x1="3" y1="12" x2="21" y2="12"/>
+                            <line x1="3" y1="18" x2="21" y2="18"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden border-t border-border bg-background hidden">
+            <nav class="px-4 py-4 space-y-2">
+                <a href="index.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">About Us</a>
+                <a href="team.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Our Team</a>
+                <a href="gallery.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Gallery</a>
+                <a href="api-services.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">API Services</a>
+                <a href="translingua.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Translingua</a>
+                <a href="careers.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Careers</a>
+                <a href="blog.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Blog</a>
+                <a href="contact.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Contact</a>
+                <a href="contact.html" class="block mt-4 px-4 py-2 text-sm font-medium text-primary-foreground bg-primary rounded-md hover:bg-primary/90 transition-colors text-center">Get Started</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-20 bg-background">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up">About Transbhasha</h1>
+                    <p class="text-xl text-muted-foreground mb-8 animate-fade-in-up delay-100">We are on a mission to break language barriers and empower multilingual communication through cutting-edge AI technology.</p>
+                    <div class="animate-fade-in-up delay-200">
+                        <a href="careers.html" class="text-primary-foreground bg-primary rounded-md hover:bg-primary/90  px-8 py-4 rounded-lg text-lg font-semibold transition-colors">Join Our Team</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision Section -->
+        <section class="py-16 dark:bg-muted">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="animate-fade-in-up mb-16">
+                        <div class="inline-block bg-primary text-white px-4 py-2 rounded-lg text-sm mb-4">Our Mission</div>
+                        <h2 class="text-4xl font-bold mb-6">Empowering Global Communication</h2>
+                        <p class="text-lg text-muted-foreground mb-4 leading-relaxed">
+                            At Transbhasha, we believe that language should never be a barrier to communication, creativity, or commerce. Our mission is to democratize access to multilingual content creation and consumption through innovative AI-powered solutions.
+                        </p>
+                        <p class="text-lg text-muted-foreground leading-relaxed">
+                            We specialize in developing state-of-the-art Automatic Speech Recognition (ASR), Machine Translation (MT), and Text-to-Speech (TTS) technologies specifically designed for Indian languages, helping businesses and content creators reach wider audiences.
+                        </p>
+                    </div>
+                    
+                    <div class="animate-fade-in-up delay-100">
+                        <div class="inline-block bg-primary text-white px-4 py-2 rounded-lg text-sm mb-4">Our Vision</div>
+                        <h2 class="text-4xl font-bold mb-6">A Multilingual Digital Future</h2>
+                        <p class="text-lg text-muted-foreground mb-4 leading-relaxed">
+                            We envision a world where every piece of digital content can be seamlessly understood and enjoyed by people regardless of their native language. Through our advanced AI technologies, we're building the infrastructure for a truly inclusive digital ecosystem.
+                        </p>
+                        <p class="text-lg text-muted-foreground leading-relaxed">
+                            Our goal is to become the leading platform for multilingual content transformation, enabling businesses to scale globally while preserving the cultural nuances and authenticity of their original content.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Section -->
+        <section class="py-16 dark:bg-background">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Our Technology</h2>
+                    <p class="text-lg text-muted-foreground">Built on cutting-edge AI and machine learning technologies</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-700 text-center animate-fade-in-up hover:shadow-lg transition-shadow">
+                        <div class="mb-6">
+                            <svg class="w-12 h-12 text-blue-500 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl text-black dark:text-white font-semibold mb-4">AI-Powered Architecture</h3>
+                        <p class="text-slate-600 dark:text-slate-300">Our modular AI architecture ensures scalable, reliable, and high-performance language processing across all supported languages.</p>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-700 text-center animate-fade-in-up delay-100 hover:shadow-lg transition-shadow">
+                        <div class="mb-6">
+                            <svg class="w-12 h-12 text-blue-500 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M12 1v6m0 6v6"/>
+                                <path d="m21 12-6-3-6 3-6-3"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl text-black dark:text-white  font-semibold mb-4">User-Friendly Portal</h3>
+                        <p class="text-slate-600 dark:text-slate-300">Intuitive interfaces and comprehensive APIs make it easy for developers and content creators to integrate our solutions.</p>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-700 text-center animate-fade-in-up delay-200 hover:shadow-lg transition-shadow">
+                        <div class="mb-6">
+                            <svg class="w-12 h-12 text-blue-500 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl text-black dark:text-white  font-semibold mb-4">Real-Time Processing</h3>
+                        <p class="text-slate-600 dark:text-slate-300">Advanced optimization techniques enable real-time processing capabilities for immediate results and seamless user experiences.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Our Values</h2>
+                    <p class="text-lg text-muted-foreground">The principles that guide everything we do</p>
+                </div>
+                
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-700 text-center animate-fade-in-up hover:shadow-lg transition-shadow">
+                        <div class="mb-4">
+                            <svg class="w-6 h-6 text-blue-500 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M12 1v6m0 6v6"/>
+                                <path d="m21 12-6-3-6 3-6-3"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg text-black dark:text-white font-semibold mb-2">Innovation</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-300">Continuously pushing the boundaries of AI and language technology</p>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-700 text-center animate-fade-in-up delay-100 hover:shadow-lg transition-shadow">
+                        <div class="mb-4">
+                            <svg class="w-6 h-6 text-blue-500 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg text-black dark:text-white font-semibold mb-2">Inclusivity</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-300">Making technology accessible across all Indian languages and cultures</p>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-700 text-center animate-fade-in-up delay-200 hover:shadow-lg transition-shadow">
+                        <div class="mb-4">
+                            <svg class="w-6 h-6 text-blue-500 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg text-black dark:text-white font-semibold mb-2">Quality</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-300">Delivering reliable, accurate, and high-performance solutions</p>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-700 text-center animate-fade-in-up delay-300 hover:shadow-lg transition-shadow">
+                        <div class="mb-4">
+                            <svg class="w-6 h-6 text-blue-500 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg text-black dark:text-white font-semibold mb-2">Efficiency</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-300">Streamlining workflows and maximizing productivity for our users</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Reviews Section -->
+        <section class="py-16 bg-muted">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">What Our Customers Say</h2>
+                    <p class="text-lg text-muted-foreground">Hear from businesses and creators who are breaking language barriers with Transbhasha</p>
+                </div>
+
+                <div class="relative max-w-6xl mx-auto">
+                    <div class="grid md:grid-cols-3 gap-8" id="reviewsGridAbout">
+                        <div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-700">
+                            <div class="flex mb-4">
+                                <span class="text-yellow-400">★★★★★</span>
+                            </div>
+                            <blockquote class="text-slate-600 dark:text-slate-300 mb-4">"Transbhasha has revolutionized our marketing efforts. We can now reach a wider audience with localized content, resulting in a significant increase in engagement and conversions."</blockquote>
+                            <div>
+                                <div class="font-semibold">Priya Sharma</div>
+                                <div class="text-sm text-slate-500 dark:text-slate-400">GlobalTech Solutions</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-700">
+                            <div class="flex mb-4">
+                                <span class="text-yellow-400">★★★★★</span>
+                            </div>
+                            <blockquote class="text-slate-600 dark:text-slate-300 mb-4">"As an education platform, it's crucial for us to provide content in multiple Indian languages. Transbhasha's AI-powered translation services have been a game-changer."</blockquote>
+                            <div>
+                                <div class="font-semibold">Amit Patel</div>
+                                <div class="text-sm text-slate-500 dark:text-slate-400">EduTech India</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-700">
+                            <div class="flex mb-4">
+                                <span class="text-yellow-400">★★★★☆</span>
+                            </div>
+                            <blockquote class="text-slate-600 dark:text-slate-300 mb-4">"I'm amazed by the accuracy and speed of Transbhasha's speech-to-text technology. It has significantly reduced my content creation time, and the quality is top-notch."</blockquote>
+                            <div>
+                                <div class="font-semibold">Meera Nair</div>
+                                <div class="text-sm text-slate-500 dark:text-slate-400">Content Creator</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="dark:bg-gray-900 dark:text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <a href="index.html" class="flex items-center space-x-2 mb-4">
+                        <svg class="w-6 h-6 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 8l6 6"/>
+                            <path d="m4 14 6-6 2-3"/>
+                            <path d="M2 5h12"/>
+                            <path d="M7 2h1"/>
+                            <path d="m22 22-5-10-5 10"/>
+                            <path d="M14 18h6"/>
+                        </svg>
+                        <span class="text-xl font-bold">Transbhasha</span>
+                    </a>
+                    <p class="dark:text-gray-400">Breaking language barriers in digital content through AI-powered transcription, translation, and voice-over services.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <nav class="space-y-2">
+                        <a href="about.html" class="block dark:text-gray-400 dark:hover:text-white hover:text-blue-700 transition-colors">About Us</a>
+                        <a href="api-services.html" class="block dark:text-gray-400 dark:hover:text-white hover:text-blue-700 transition-colors">API Services</a>
+                        <a href="translingua.html" class="block dark:text-gray-400 dark:hover:text-white hover:text-blue-700 transition-colors">Translingua</a>
+                        <a href="careers.html" class="block dark:text-gray-400 dark:hover:text-white hover:text-blue-700 transition-colors">Careers</a>
+                        <a href="blog.html" class="block dark:text-gray-400 dark:hover:text-white hover:text-blue-700 transition-colors">Blog</a>
+                    </nav>
+                </div>
+
+                <div>
+                    <h4 class="text-lg  font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-2">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <span class="dark:text-gray-400">contact@transbhasha.com</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <span class="dark:text-gray-400">+91 12345 67890</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span class="dark:text-gray-400">Bangalore, India</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <nav class="space-y-2">
+                        <a href="#" class="block dark:text-gray-400 dark:hover:text-white hover:text-blue-700 transition-colors">Privacy Policy</a>
+                        <a href="#" class="block dark:text-gray-400 dark:hover:text-white transition-colors hover:text-blue-700">Terms of Service</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center dark:text-gray-400">
+                <p>&copy; 2024 Transbhasha. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
