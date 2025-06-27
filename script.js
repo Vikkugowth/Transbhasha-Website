@@ -291,7 +291,7 @@ function updateReviewDots() {
 
   for (let i = 0; i <= maxIndex; i++) {
     const dot = document.createElement("button")
-    dot.className = `w-2 h-2 rounded-full transition-colors ${i === currentReviewIndex ? "bg-primary" : "bg-border"}`
+    dot.className = `w-2 h-2 rounded-full transition-colors ${i === currentReviewIndex ? "bg-primary" : "bg-black"}`
     dot.addEventListener("click", () => {
       currentReviewIndex = i
       updateReviewsDisplay()

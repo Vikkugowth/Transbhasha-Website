@@ -122,11 +122,9 @@ document.addEventListener("DOMContentLoaded", () => {
           justify-content: center;
           ${isActive ? "animation: pulse 2s infinite;" : ""}
         ">
-          ${
-            isCompleted
-              ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>'
-              : step.icon
-          }
+
+        ${step.icon}
+
         </div>
         <div style="margin-top: 1rem; text-align: center;">
           <h3 style="font-weight: 600; font-size: 0.875rem; color: ${isActive ? "var(--primary)" : "var(--foreground)"};">
@@ -153,8 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const stepElement = document.createElement("div")
       const isActive = index === currentStep
       const isLastStep = currentStep === workflowData.length - 1
-      const isFirstStep = index === 0 && currentStep === 0
-      const isCompleted = index < currentStep || (index === currentStep && isLastStep) || isFirstStep 
+      const isCompleted = index <= currentStep || (index === currentStep && isLastStep)
 
       stepElement.innerHTML = `
         <div style="
@@ -177,17 +174,15 @@ document.addEventListener("DOMContentLoaded", () => {
             align-items: center;
             justify-content: center;
           ">
-            ${
-              isCompleted
-                ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>'
-                : step.icon
-            }
+          
+            ${step.icon}
+
           </div>
           <div>
-            <h3 style="font-weight: 600; color: ${isActive ? "white" : "var(--foreground)"};">
+            <h3 style="font-weight: 600; color: ${isActive ? "black" : "var(--foreground)"};">
               ${step.title}
             </h3>
-            <p style="font-size: 0.875rem; color: ${isActive ? "rgba(255,255,255,0.8)" : "var(--muted-foreground)"};">
+            <p style="font-size: 0.875rem; color: ${isActive ? "rgba(0,0,0,0.9)" : "var(--muted-foreground)"};">
               ${step.description}
             </p>
           </div>
