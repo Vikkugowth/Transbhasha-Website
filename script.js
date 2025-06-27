@@ -846,10 +846,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateTTSCharCount();
   }
+
+  
 });
 
 
-
+// showtab 
 
 function showTab(tabId, buttonElement) {
   const wrapper = document.getElementById("wholetab");
@@ -955,43 +957,7 @@ syncDropdown('targetLanguageMT', 'targetTTS')
   
   
 
-function MicButton(demoInstance) {
-    let mediaRecorder
-    let audioChunks = []
-    let isRecording = false
-  
-    const recordBtn = document.getElementById('recordBtn')
-  
-    recordBtn.addEventListener('click', async () => {
-      if (!isRecording) {
-        try {
-          const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
-          mediaRecorder = new MediaRecorder(stream)
-          audioChunks = []
-  
-          mediaRecorder.ondataavailable = (e) => {
-            audioChunks.push(e.data)
-          }
-  
-          mediaRecorder.onstop = async () => {
-            const audioBlob = new Blob(audioChunks, { type: 'audio/wav' })
-            await demoInstance.simulateASR(audioBlob) // ← real fetch inside simulateASR now
-          }
-  
-          mediaRecorder.start()
-          isRecording = true
-          recordBtn.textContent = 'Stop Recording'
-        } catch (error) {
-          console.error('Could not start recording:', error)
-        }
-      } else {
-        mediaRecorder.stop()
-        isRecording = false
-        recordBtn.textContent = 'Start Recording'
-      }
-    })
-}
-
+// toggleDemo
 function toggleDemoSection() {
   const section = document.getElementById("demoSection");
   if (section) {

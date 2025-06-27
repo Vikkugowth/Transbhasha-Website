@@ -101,6 +101,8 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   )
 
+
+
   // Render gallery items
   function renderGalleryItems(filter = "all") {
     const filteredItems = filter === "all" ? galleryItems : galleryItems.filter((item) => item.category === filter)
@@ -225,4 +227,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initial render
   renderGalleryItems()
+
+  const counters = document.querySelectorAll(".count-up");
+
+  const observers = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = el.getAttribute("data-target");
+        animateCountUp(el, target);
+        obs.unobserve(el); // animate only once
+      }
+    });
+  }, {
+    threshold: 0.6 // trigger when 60% visible
+  });
+
+  counters.forEach(el => observers.observe(el));
 })
+
+
+// CountUP
+
+function animateCountUp(el, targetString, duration = 2000) {
+  const numberPart = parseFloat(targetString.replace(/[^\d.]/g, ''));
+  const suffix = targetString.replace(/[\d.]/g, '');
+
+  let start = 0;
+  let startTime = null;
+
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const progress = Math.min((timestamp - startTime) / duration, 1);
+    const current = (numberPart * progress).toFixed(1);
+
+    // Format based on suffix
+    if (suffix.includes("K")) {
+      el.textContent = Math.floor(current) + "K+";
+    } else if (suffix.includes("%")) {
+      el.textContent = parseFloat(current).toFixed(0) + "%";
+    } else if (suffix.includes("+")) {
+      el.textContent = Math.floor(current) + "+";
+    } else {
+      el.textContent = Math.floor(current);
+    }
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    }
+  }
+
+  requestAnimationFrame(step);
+}
+
+
