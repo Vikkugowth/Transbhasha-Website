@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
               <line x1="12" y1="19" x2="12" y2="23"/>
               <line x1="8" y1="23" x2="16" y2="23"/>
           </svg>`,
-      title: "AI Transcription",
-      description: "Advanced speech recognition extracts audio",
+      title: "ASR",
+      description: "Automatic Speech Recognition extracts audio",
       details: "Our AI analyzes audio tracks, identifies speakers, and converts speech to text with 95%+ accuracy across 22+ Indian languages.",
       status: "pending",
     },
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
       icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="20,6 9,17 4,12"/>
           </svg>`,
-      title: "Grammar Correction",
+      title: "AI Grammar Correction",
       description: "Intelligent grammar and context correction",
       details: "AI-powered grammar correction ensures proper sentence structure, punctuation, and contextual accuracy for professional output.",
       status: "pending",
