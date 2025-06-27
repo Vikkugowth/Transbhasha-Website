@@ -999,4 +999,40 @@ function toggleDemoSection() {
   }
 }
 
+function animateCountUp(el, targetString, duration = 2000) {
+  const numberPart = parseFloat(targetString.replace(/[^\d.]/g, ''));
+  const suffix = targetString.replace(/[\d.]/g, '');
 
+  let start = 0;
+  let startTime = null;
+
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const progress = Math.min((timestamp - startTime) / duration, 1);
+    const current = (numberPart * progress).toFixed(1);
+
+    // Round and format
+    if (suffix.includes("K")) {
+      el.textContent = Math.floor(current) + "K+";
+    } else if (suffix.includes("%")) {
+      el.textContent = parseFloat(current).toFixed(1) + "%";
+    } else if (suffix.includes("+")) {
+      el.textContent = Math.floor(current) + "+";
+    } else {
+      el.textContent = Math.floor(current);
+    }
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    }
+  }
+
+  requestAnimationFrame(step);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".count-up").forEach((el) => {
+    const target = el.getAttribute("data-target");
+    animateCountUp(el, target);
+  });
+});
