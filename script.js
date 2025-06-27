@@ -781,7 +781,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-let  lastMTText = "";
+
+
 const MAX_MT_CHARS = 100;
 const MAX_TTS_CHARS = 300;
 
@@ -822,6 +823,8 @@ function updateTTSCharCount() {
 }
 
 
+let  lastMTText = "";
+
 document.addEventListener("DOMContentLoaded", () => {
   const mtSourceText = document.getElementById("sourceTextMT");
   if (mtSourceText) {
@@ -846,11 +849,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateTTSCharCount();
   }
-});
+  
+  // Animate Count up
+  const counters = document.querySelectorAll(".count-up");
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = el.getAttribute("data-target");
+          animateCountUp(el, target);
+          obs.unobserve(el); // animate only once
+        }
+      });
+    }, {
+      threshold: 0.6 // trigger when 60% visible
+    });
+
+    counters.forEach(el => observer.observe(el));
+  });
 
 
 
-
+// Tab Preference
 function showTab(tabId, buttonElement) {
   const wrapper = document.getElementById("wholetab");
   if (wrapper) wrapper.classList.remove("hidden");
@@ -893,7 +914,8 @@ function showTab(tabId, buttonElement) {
   }
 }
 
-  
+// Source Language
+
 function populateSourceLanguages(...selectorIds) {
     fetch('https://asr.iitm.ac.in/demo/srclang')
       .then(res => res.json())
@@ -913,7 +935,9 @@ function populateSourceLanguages(...selectorIds) {
       })
       .catch(err => console.error('Source language fetch failed:', err));
 }
-  
+
+// Target Language
+
 function populateTargetLanguages(...selectorIds) {
   fetch('https://asr.iitm.ac.in/demo/destlang')
     .then(res => res.json())
@@ -955,42 +979,7 @@ syncDropdown('targetLanguageMT', 'targetTTS')
   
   
 
-function MicButton(demoInstance) {
-    let mediaRecorder
-    let audioChunks = []
-    let isRecording = false
-  
-    const recordBtn = document.getElementById('recordBtn')
-  
-    recordBtn.addEventListener('click', async () => {
-      if (!isRecording) {
-        try {
-          const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
-          mediaRecorder = new MediaRecorder(stream)
-          audioChunks = []
-  
-          mediaRecorder.ondataavailable = (e) => {
-            audioChunks.push(e.data)
-          }
-  
-          mediaRecorder.onstop = async () => {
-            const audioBlob = new Blob(audioChunks, { type: 'audio/wav' })
-            await demoInstance.simulateASR(audioBlob) // ← real fetch inside simulateASR now
-          }
-  
-          mediaRecorder.start()
-          isRecording = true
-          recordBtn.textContent = 'Stop Recording'
-        } catch (error) {
-          console.error('Could not start recording:', error)
-        }
-      } else {
-        mediaRecorder.stop()
-        isRecording = false
-        recordBtn.textContent = 'Start Recording'
-      }
-    })
-}
+// toggleDemo
 
 function toggleDemoSection() {
   const section = document.getElementById("demoSection");
@@ -998,6 +987,9 @@ function toggleDemoSection() {
     section.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 }
+
+
+// CountUP
 
 function animateCountUp(el, targetString, duration = 2000) {
   const numberPart = parseFloat(targetString.replace(/[^\d.]/g, ''));
@@ -1011,11 +1003,11 @@ function animateCountUp(el, targetString, duration = 2000) {
     const progress = Math.min((timestamp - startTime) / duration, 1);
     const current = (numberPart * progress).toFixed(1);
 
-    // Round and format
+    // Format based on suffix
     if (suffix.includes("K")) {
       el.textContent = Math.floor(current) + "K+";
     } else if (suffix.includes("%")) {
-      el.textContent = parseFloat(current).toFixed(1) + "%";
+      el.textContent = parseFloat(current).toFixed(0) + "%";
     } else if (suffix.includes("+")) {
       el.textContent = Math.floor(current) + "+";
     } else {
@@ -1030,9 +1022,4 @@ function animateCountUp(el, targetString, duration = 2000) {
   requestAnimationFrame(step);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".count-up").forEach((el) => {
-    const target = el.getAttribute("data-target");
-    animateCountUp(el, target);
-  });
-});
+
