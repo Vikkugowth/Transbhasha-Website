@@ -829,7 +829,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     mtSourceText.addEventListener("input", (e) => {
       lastMTText = e.target.value;
-      updateMTCharCount(); // use helper
+      updateMTCharCount(); 
     });
 
     updateMTCharCount(); // initial update on load if there's pre-filled text
@@ -853,47 +853,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // showtab 
 
-function showTab(tabId, buttonElement) {
+function showTab(tabId, buttonElement, scroll = false) {
   const wrapper = document.getElementById("wholetab");
-  if (wrapper) wrapper.classList.remove("hidden");
+  const allTabs = ["asrBox", "mtBox", "ttsBox"];
+  let scrollTarget = null;
 
-  const allBoxes = ["asrBox", "mtBox", "ttsBox"];
-  allBoxes.forEach(id => {
+  // 1. Show tab wrapper
+  if (wrapper) {
+    wrapper.classList.remove("hidden");
+  }
+
+  // 2. Toggle tab content
+  allTabs.forEach(id => {
     const el = document.getElementById(id);
     if (el) el.classList.add("hidden");
   });
 
   const activeBox = document.getElementById(tabId);
-  if (activeBox) activeBox.classList.remove("hidden");
-
-  if (tabId === 'mtBox') {
-    const mtSourceText = document.getElementById('sourceTextMT');
-    const sourceASRLang = document.getElementById('source-lang')?.value;
-    const mtSourceLang = document.getElementById('sourceLanguageMT');
-  
-    if (mtSourceText) {
-      mtSourceText.value = lastMTText;
-      updateMTCharCount();
-    }
-  
-    if (mtSourceLang && sourceASRLang) {
-      mtSourceLang.value = sourceASRLang;
-    }
+  if (activeBox) {
+    activeBox.classList.remove("hidden");
+    if (scroll) scrollTarget = activeBox;
   }
 
-  document.querySelectorAll('.tab-button').forEach(btn => {
-    btn.style.backgroundColor = '';
-    btn.style.borderColor = '';
-    btn.style.boxShadow = '';
-  });
 
+  // 3. Tab button active visual
+  document.querySelectorAll(".tab-button").forEach(btn => {
+    btn.classList.remove("ring-2", "ring-primary");
+  });
   if (buttonElement) {
-    
-    buttonElement.style.borderColor = '#3b82f6';    
-    buttonElement.style.boxShadow = '0 0 0 2px #000';
-    
+    buttonElement.classList.add("ring-2", "ring-primary");
+  }
+
+  //  4. Scroll AFTER box is visible
+  if (scroll && scrollTarget) {
+    setTimeout(() => {
+      scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 30);
   }
 }
+
 
   
 function populateSourceLanguages(...selectorIds) {

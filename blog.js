@@ -65,7 +65,7 @@ const blogPosts = [
     category: "engineering",
     readTime: "10 min read",
     image:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     featured: false,
   },
   {
@@ -96,7 +96,7 @@ const blogPosts = [
 // Blog functionality
 document.addEventListener("DOMContentLoaded", () => {
   const blogGrid = document.getElementById("blogGrid")
-  const featuredSection = document.getElementById("featuredSection")
+  
   const featuredArticle = document.getElementById("featuredArticle")
   const searchInput = document.getElementById("searchInput")
   const filterButtons = document.querySelectorAll(".filter-btn")
@@ -121,69 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   )
 
-  // Render featured article
-  function renderFeaturedArticle() {
-    const featured = blogPosts.find((post) => post.featured)
-    if (!featured) {
-      featuredSection.style.display = "none"
-      return
-    }
-
-    const categoryName = featured.category
-      .split("-")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ")
-
-    featuredArticle.innerHTML = `
-            <div class="featured-card" style="background-color: var(--card); border: 1px solid var(--border); border-radius: 0.75rem; overflow: hidden; transition: all 0.3s ease;">
-                <div style="display: grid; gap: 0; grid-template-columns: 1fr;">
-                    <div style="height: 300px; overflow: hidden;">
-                        <img src="${featured.image}" alt="${featured.title}" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div style="padding: 2rem;">
-                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                            <span style="background-color: var(--primary); color: var(--primary-foreground); font-size: 0.75rem; font-weight: 500; padding: 0.25rem 0.5rem; border-radius: 0.375rem;">Featured</span>
-                            <span style="background-color: var(--secondary); color: var(--secondary-foreground); font-size: 0.75rem; font-weight: 500; padding: 0.25rem 0.5rem; border-radius: 0.375rem;">${categoryName}</span>
-                        </div>
-                        <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">${featured.title}</h3>
-                        <p style="color: var(--muted-foreground); margin-bottom: 1.5rem;">${featured.excerpt}</p>
-                        <div style="display: flex; align-items: center; gap: 1rem; color: var(--muted-foreground); font-size: 0.875rem; margin-bottom: 1.5rem;">
-                            <div style="display: flex; align-items: center; gap: 0.25rem;">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                                    <circle cx="12" cy="7" r="4"/>
-                                </svg>
-                                <span>${featured.author}</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.25rem;">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                                    <line x1="16" y1="2" x2="16" y2="6"/>
-                                    <line x1="8" y1="2" x2="8" y2="6"/>
-                                    <line x1="3" y1="10" x2="21" y2="10"/>
-                                </svg>
-                                <span>${featured.date}</span>
-                            </div>
-                            <span>${featured.readTime}</span>
-                        </div>
-                        <a href="#" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-                            Read Article
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="7" y1="17" x2="17" y2="7"/>
-                                <polyline points="7,7 17,7 17,17"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        `
-
-    // Add responsive grid for larger screens
-    const featuredCard = featuredArticle.querySelector(".featured-card")
-    if (window.innerWidth >= 768) {
-      featuredCard.style.gridTemplateColumns = "1fr 1fr"
-    }
-  }
 
   // Render blog posts
   function renderBlogPosts() {
@@ -318,6 +255,14 @@ document.addEventListener("DOMContentLoaded", () => {
       renderBlogPosts()
     })
   })
+ 
+// initial render
+  const defaultFilterButton = document.querySelector('.filter-btn[data-category="all"]')
+   if (defaultFilterButton) {
+    defaultFilterButton.click()
+   } else {
+    renderBlogPosts()
+   }
 
   // Newsletter form
   newsletterForm.addEventListener("submit", (e) => {
@@ -327,9 +272,8 @@ document.addEventListener("DOMContentLoaded", () => {
     e.target.reset()
   })
 
-  // Initial render
-  renderFeaturedArticle()
-  renderBlogPosts()
+  
+
 
   // Handle window resize for featured article
   window.addEventListener("resize", () => {
@@ -343,3 +287,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 })
+
+// filter Category colors
+document.querySelectorAll(".filter-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    // Remove active classes from all
+    document.querySelectorAll(".filter-btn").forEach(btn => {
+      btn.classList.remove("bg-primary", "text-white");
+      btn.classList.add("bg-gray-200", "text-gray-700");
+    });
+
+    // Add active class to clicked
+    button.classList.add("bg-primary", "text-white");
+    button.classList.remove("bg-gray-200", "text-gray-700");
+  });
+});

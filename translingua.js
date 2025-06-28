@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </svg>`,
       title: "ASR",
       description: "Automatic Speech Recognition extracts audio",
-      details: "Our AI analyzes audio tracks, identifies speakers, and converts speech to text with 95%+ accuracy across 22+ Indian languages.",
+      details: "Our AI analyzes audio tracks, identifies speakers, and converts speech to text with 95%+ accuracy across 13+ Indian languages.",
       status: "pending",
     },
     {

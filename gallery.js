@@ -280,4 +280,18 @@ function animateCountUp(el, targetString, duration = 2000) {
   requestAnimationFrame(step);
 }
 
+// filter Category colors
 
+document.querySelectorAll(".filter-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    // Remove primary styles from all buttons
+    document.querySelectorAll(".filter-btn").forEach(btn => {
+      btn.classList.remove("bg-primary", "text-white");
+      btn.classList.add("bg-gray-200", "text-gray-700");
+    });
+
+    // Add primary styles to the clicked button
+    button.classList.remove("bg-gray-200", "text-gray-700");
+    button.classList.add("bg-primary", "text-white");
+  });
+});

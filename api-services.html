@@ -298,7 +298,7 @@
                                 <svg class="w-4 h-4 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="20,6 9,17 4,12"/>
                                 </svg>
-                                <span>Support for 22+ Indian languages</span>
+                                <span>Support for 13+ Indian languages</span>
                             </li>
                             <li class="flex items-center space-x-2 text-sm">
                                 <svg class="w-4 h-4 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -313,6 +313,9 @@
                                 <span>Custom vocabulary support</span>
                             </li>
                         </ul>
+                        <button onclick="showTab('asrBox', document.querySelectorAll('.tab-button')[0], true)" class="mt-6 px-4 py-1 bg-primary text-white rounded-full justify-center items-center font-medium hover:bg-primary/90 transition">
+                            Try now
+                        </button>
                     </div>
 
                     <div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-700 h-full animate-fade-in-up delay-100 hover:shadow-lg transition-shadow">
@@ -353,6 +356,9 @@
                                 <span>Batch processing support</span>
                             </li>
                         </ul>
+                        <button onclick="showTab('mtBox', document.querySelectorAll('.tab-button')[1], true)" class="mt-12 px-4 py-1 bg-primary text-white rounded-full justify-center items-center font-medium hover:bg-primary/90 transition">
+                            Try now
+                        </button>
                     </div>
 
                     <div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-700 h-full animate-fade-in-up delay-200 hover:shadow-lg transition-shadow">
@@ -389,6 +395,9 @@
                                 <span>SSML support for advanced control</span>
                             </li>
                         </ul>
+                        <button onclick="showTab('ttsBox', document.querySelectorAll('.tab-button')[2], true)" class="mt-12 px-4 py-1 bg-primary text-white rounded-full justify-center items-center font-medium hover:bg-primary/90 transition">
+                            Try now
+                        </button>
                     </div>
                 </div>
             </div>
@@ -494,7 +503,7 @@
                 <div id="tabContent">
           
                   <!-- ASR Box -->
-                  <div id="asrBox" class=" hidden border border-border rounded-2xl p-8 shadow-lg">
+                  <div id="asrBox" class="border border-border rounded-2xl p-8 shadow-lg">
                     <h3 class="text-lg font-semibold mb-[3rem] text-center">Automatic Speech Recognition</h3>
                     <div class="flex justify-between items-center mb-6 gap-4">
                       <!-- Source Language + Mic Button -->
@@ -578,7 +587,7 @@
                   </div>
           
                   <!-- TTS Box -->
-                  <div id="ttsBox" class="hidden border border-border rounded-2xl p-8 shadow-lg">
+                  <div id="ttsBox" class="border border-border rounded-2xl p-8 shadow-lg">
                     <div class="text-center mb-6">
                       <h3 class="text-lg font-semibold">Text-to-Speech</h3>
                     </div>

@@ -244,46 +244,18 @@ document.addEventListener("DOMContentLoaded", () => {
   renderTeamMembers()
 })
 
-// Add filter button styles
-const filterStyles = document.createElement("style")
-filterStyles.textContent = `
-    .filter-btn {
-        background-color: var(--background);
-        color: var(--foreground);
-        border: 1px solid var(--border);
-        padding: 0.5rem 1rem;
-        border-radius: 0.375rem;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        font-size: 0.875rem;
-    }
-    
-    .filter-btn:hover {
-        background-color: var(--muted);
-    }
-    
-    .filter-btn.active {
-        background-color: var(--primary);
-        color: var(--primary-foreground);
-        border-color: var(--primary);
-    }
-    
-    .social-link {
-        color: var(--muted-foreground);
-        transition: color 0.2s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .social-link:hover {
-        color: var(--primary);
-    }
-    
-    .team-member-card {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-`
-document.head.appendChild(filterStyles)
+// filter Category colors
+
+document.querySelectorAll(".filter-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    // Remove active classes from all
+    document.querySelectorAll(".filter-btn").forEach(btn => {
+      btn.classList.remove("bg-primary", "text-white");
+      btn.classList.add("bg-gray-200", "text-gray-700");
+    });
+
+    // Add active class to clicked
+    button.classList.add("bg-primary", "text-white");
+    button.classList.remove("bg-gray-200", "text-gray-700");
+  });
+});
