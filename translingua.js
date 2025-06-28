@@ -122,11 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
           justify-content: center;
           ${isActive ? "animation: pulse 2s infinite;" : ""}
         ">
-          ${
-            isCompleted
-              ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>'
-              : step.icon
-          }
+          ${step.icon}
         </div>
         <div style="margin-top: 1rem; text-align: center;">
           <h3 style="font-weight: 600; font-size: 0.875rem; color: ${isActive ? "var(--primary)" : "var(--foreground)"};">
@@ -177,11 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
             align-items: center;
             justify-content: center;
           ">
-            ${
-              isCompleted
-                ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>'
-                : step.icon
-            }
+            ${step.icon}
           </div>
           <div>
             <h3 style="font-weight: 600; color: ${isActive ? "white" : "var(--foreground)"};">
