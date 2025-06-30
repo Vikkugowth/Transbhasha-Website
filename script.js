@@ -1,3 +1,10 @@
+import { getSourceLanguages } from "./API.js";
+import { getTargetLanguages } from "./API.js";
+import { getASR } from "./API.js";
+import { getMT } from "./API.js";
+import { getTTS } from "./API.js";
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const themeToggle = document.getElementById("themeToggle")
   const html = document.documentElement
@@ -389,6 +396,7 @@ class TransbhashaDemo {
     this.recordingStartTime = null
     this.lastApiCall = 0
     this.rateLimitDelay = 2000 // 2 seconds between API calls
+    this.lastMTText = "";
 
     this.initializeElements()
     this.bindEvents()
@@ -593,6 +601,8 @@ class TransbhashaDemo {
       this.showStatus("Error processing audio. Please try again.", "error")
     }
   }
+  
+ 
 
   async simulateASR(audioBlob) {
     const MAX_AUDIO_SIZE = 2 * 1024 * 1024; // 2MB limit
@@ -617,10 +627,7 @@ class TransbhashaDemo {
     this.showStatus("Recognizing speech...", "loading");
   
     try {
-      const response = await fetch('https://asr.iitm.ac.in/internal/asr/decode', {
-        method: 'POST',
-        body: formData
-      });
+     const response = await getASR(formData);
   
       const result = await response.json();
       const vttText = result.vtt || '';
@@ -633,7 +640,7 @@ class TransbhashaDemo {
   
       if (mtSourceText && charCount) {
         mtSourceText.value = finalTranscript;
-        lastMTText = finalTranscript; // Update preserved value
+        this.lastMTText = finalTranscript; // Update preserved value
         const trimmedLength = finalTranscript.trim().length;
         charCount.textContent = `${trimmedLength}/100 characters`;
       }
@@ -665,17 +672,8 @@ class TransbhashaDemo {
 
   
     try {
-      const response = await fetch('https://asr.iitm.ac.in/internal/mt/translate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({
-          transcript: sourceTextMT,
-          translation_choice: 'SPRING-IITM',
-          src_language: srcLang,
-          tgt_language: tgtLang
-        })
-      });
-  
+      
+      const response= await getMT(sourceTextMT, srcLang, tgtLang);
       const data = await response.json();
   
       const translated = data.mt_out || 'Translation failed.';
@@ -709,24 +707,11 @@ class TransbhashaDemo {
     
     this.showStatus("Generating audio...", "loading", "TTS");
   
-    const requestBody = {
-      input: ttstext,
-      alpha: 1,
-      segmentwise: "True"
-    };
+    
   
-    const url = `https://asr.iitm.ac.in/tts/${targetLang}/${gender}`; 
-    console.log("TTS URL:", url);
-  
+   
     try {
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(requestBody)
-      });
-  
+      const response = await getTTS(ttstext, targetLang, gender)
       const data = await response.json();
       console.log("TTS Response:", data);
   
@@ -763,20 +748,22 @@ class TransbhashaDemo {
     
 }
 
+
+
 // Initialize demo when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
   if (document.getElementById("micButton")) {
     new TransbhashaDemo();
   }
   
+
   // MT charcount
   const mtSourceText = document.getElementById("sourceTextMT");
   if (mtSourceText) {
     mtSourceText.setAttribute('maxlength', MAX_MT_CHARS);
 
-    mtSourceText.addEventListener("input", (e) => {
-      lastMTText = e.target.value;
-      updateMTCharCount(); 
+    mtSourceText.addEventListener("input", () => {
+     updateMTCharCount(); 
     });
     
   }
@@ -794,7 +781,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-let  lastMTText = "";
+
 const MAX_MT_CHARS = 100;
 const MAX_TTS_CHARS = 300;
 
@@ -875,11 +862,11 @@ function showTab(tabId, buttonElement, scroll = false) {
     }, 30);
   }
 }
+window.showTab = showTab;
 
 
-  
 function populateSourceLanguages(...selectorIds) {
-    fetch('https://asr.iitm.ac.in/demo/srclang')
+    getSourceLanguages()
       .then(res => res.json())
       .then(data => {
         selectorIds.forEach(selectorId => {
@@ -899,7 +886,7 @@ function populateSourceLanguages(...selectorIds) {
 }
   
 function populateTargetLanguages(...selectorIds) {
-  fetch('https://asr.iitm.ac.in/demo/destlang')
+  getTargetLanguages()
     .then(res => res.json())
     .then(data => {
       const ttsData = data.tts;
