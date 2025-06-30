@@ -479,13 +479,11 @@ class TransbhashaDemo {
   }
   
   
-
-
   checkRateLimit() {
     const now = Date.now()
     if (now - this.lastApiCall < this.rateLimitDelay) {
       const remainingTime = Math.ceil((this.rateLimitDelay - (now - this.lastApiCall)) / 1000)
-      this.showStatus(`Please wait ${remainingTime} seconds before making another request`, "error")
+      this.showStatus(`Please wait ${remainingTime} seconds before making another request`, "error","ASR")
       return false
     }
     this.lastApiCall = now
@@ -522,7 +520,7 @@ class TransbhashaDemo {
       this.recordingStartTime = Date.now()
 
       // Update UI
-      this.micButton.classList.add("animate-pulse")
+      
       this.micButton.querySelector(".btn-text").textContent = "Stop"
       this.showStatus("Recording... Speak now!", "loading")
 
@@ -557,6 +555,8 @@ class TransbhashaDemo {
   }
 
   startRecordingTimer() {
+    this.recordingTimer.classList.remove("hidden")
+
     this.recordingTimer.textContent = "00:00"
     
 
@@ -575,7 +575,10 @@ class TransbhashaDemo {
       clearInterval(this.timerInterval)
       this.timerInterval = null
     }
-    this.recordingTimer.classList.add("hidden")
+    if (this.recordingTimer) {
+      this.recordingTimer.textContent = "00:00";
+      this.recordingTimer.classList.add("hidden");
+    }
   }
 
   async processRecording() {
@@ -757,27 +760,37 @@ class TransbhashaDemo {
     }
    
   }
-  
-  if (speakerButton) {
-    speakerButton.addEventListener('click', () => {
-      simulateTTS();
-    });
-  }
-  
-  if (translateButton) {
-    translateButton.addEventListener('click', () => {
-      simulateMT();
-    });
-  }
-  
-  
+    
 }
 
 // Initialize demo when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
   if (document.getElementById("micButton")) {
     new TransbhashaDemo();
+  }
+  
+  // MT charcount
+  const mtSourceText = document.getElementById("sourceTextMT");
+  if (mtSourceText) {
+    mtSourceText.setAttribute('maxlength', MAX_MT_CHARS);
 
+    mtSourceText.addEventListener("input", (e) => {
+      lastMTText = e.target.value;
+      updateMTCharCount(); 
+    });
+    
+  }
+
+  // TTS charcount
+  const ttsPreview = document.getElementById("ttsPreview");
+  if (ttsPreview) {
+    ttsPreview.setAttribute('maxlength', MAX_TTS_CHARS);
+
+    ttsPreview.addEventListener("input", () => {
+      updateTTSCharCount();
+    });
+
+    updateTTSCharCount();
   }
 });
 
@@ -820,35 +833,6 @@ function updateTTSCharCount() {
     }
   }
 }
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const mtSourceText = document.getElementById("sourceTextMT");
-  if (mtSourceText) {
-    mtSourceText.setAttribute('maxlength', MAX_MT_CHARS);
-
-    mtSourceText.addEventListener("input", (e) => {
-      lastMTText = e.target.value;
-      updateMTCharCount(); 
-    });
-
-    updateMTCharCount(); // initial update on load if there's pre-filled text
-  }
-
-  // TTS Section
-  const ttsPreview = document.getElementById("ttsPreview");
-  if (ttsPreview) {
-    ttsPreview.setAttribute('maxlength', MAX_TTS_CHARS);
-
-    ttsPreview.addEventListener("input", () => {
-      updateTTSCharCount();
-    });
-
-    updateTTSCharCount();
-  }
-
-  
-});
 
 
 // showtab 
