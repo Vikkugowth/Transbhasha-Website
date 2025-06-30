@@ -522,7 +522,7 @@ class TransbhashaDemo {
       // Update UI
       
       this.micButton.querySelector(".btn-text").textContent = "Stop"
-      this.showStatus("Recording... Speak now!", "loading")
+      this.showStatus("Recording... Speak now!")
 
       // Start timer
       this.startRecordingTimer()
@@ -546,7 +546,7 @@ class TransbhashaDemo {
       this.isRecording = false
 
       // Update UI
-      this.micButton.classList.remove("animate-pulse")
+      
       this.micButton.querySelector(".btn-text").textContent = "Start"
 
       // Stop timer
