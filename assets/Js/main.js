@@ -3,46 +3,49 @@ import { getTargetLanguages } from "./API.js";
 import { getASR } from "./API.js";
 import { getMT } from "./API.js";
 import { getTTS } from "./API.js";
+import { loadThemes, applyThemeVars } from './common.js';
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const themeToggle = document.getElementById("themeToggle")
-  const html = document.documentElement
-  const sunIcon = themeToggle.querySelector(".sun-icon")
-  const moonIcon = themeToggle.querySelector(".moon-icon")
+document.addEventListener("DOMContentLoaded", async () => {
+  const themeToggle = document.getElementById("themeToggle");
+  const html = document.documentElement;
+  const sunIcon = themeToggle.querySelector(".sun-icon");
+  const moonIcon = themeToggle.querySelector(".moon-icon");
 
-  // Check saved theme or default to light
-  const savedTheme = localStorage.getItem("theme") || "light"
+  // Load themes from JSON
+  const themes = await loadThemes();
 
-  // Apply the theme
-  if (savedTheme === "dark") {
-    html.classList.add("dark")
-  } else {
-    html.classList.remove("dark")
-  }
+  // Get saved theme or default
+  const savedTheme = localStorage.getItem("theme") || "light";
 
-  // Update icons
+  // Set dark class if needed
+  html.classList.toggle("dark", savedTheme === "dark");
+
+  // Apply CSS variables from selected theme
+  applyThemeVars(themes[savedTheme]);
+  console.log("savedTheme:", savedTheme)
+
+  // Set correct icon
+  updateThemeIcon(savedTheme);
+
   function updateThemeIcon(theme) {
-    if (theme === "dark") {
-      sunIcon.classList.remove("hidden")
-      moonIcon.classList.add("hidden")
-    } else {
-      sunIcon.classList.add("hidden")
-      moonIcon.classList.remove("hidden")
-    }
+    const isDark = theme === "dark";
+    sunIcon.classList.toggle("hidden", !isDark);
+    moonIcon.classList.toggle("hidden", isDark);
   }
-
-  updateThemeIcon(savedTheme)
 
   themeToggle.addEventListener("click", () => {
-    const isDark = html.classList.contains("dark")
-    const newTheme = isDark ? "light" : "dark"
+    const currentTheme = html.classList.contains("dark") ? "dark" : "light";
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
 
-    html.classList.toggle("dark", newTheme === "dark")
-    localStorage.setItem("theme", newTheme)
-    updateThemeIcon(newTheme)
-  })
-})
+    html.classList.toggle("dark", newTheme === "dark");
+    localStorage.setItem("theme", newTheme);
+    applyThemeVars(themes[newTheme]);
+    updateThemeIcon(newTheme);
+  });
+});
+
+
 
 
 // Mobile Menu Toggle
@@ -627,8 +630,7 @@ class TransbhashaDemo {
     this.showStatus("Recognizing speech...", "loading");
   
     try {
-     const response = await getASR(formData);
-  
+      const response = await getASR(formData);
       const result = await response.json();
       const vttText = result.vtt || '';
       const lines = vttText.split('\n').filter(line => line && !line.includes('-->') && !line.startsWith('WEBVTT'));
@@ -661,8 +663,6 @@ class TransbhashaDemo {
     const srcLang = this.sourceLanguage.value;
     const tgtLang = this.targetLanguage.value;
     
-  
-  
     if (!sourceTextMT.trim()) {
       this.showStatus("No input text provided for translation.", "error","MT");
       return;
@@ -670,12 +670,10 @@ class TransbhashaDemo {
   
     this.showStatus("Translating...", "loading", "MT");
 
-  
     try {
       
       const response= await getMT(sourceTextMT, srcLang, tgtLang);
       const data = await response.json();
-  
       const translated = data.mt_out || 'Translation failed.';
       const truncatedTranslation = translated;
       this.targetText.value = truncatedTranslation;
@@ -703,13 +701,9 @@ class TransbhashaDemo {
       this.showStatus("No text provided for speech synthesis.", "error", "TTS");
       return;
     }
-    
-    
+        
     this.showStatus("Generating audio...", "loading", "TTS");
   
-    
-  
-   
     try {
       const response = await getTTS(ttstext, targetLang, gender)
       const data = await response.json();

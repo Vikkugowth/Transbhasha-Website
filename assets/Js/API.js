@@ -1,22 +1,19 @@
-import { Source_Language } from "./config.js";
-import { Target_Language } from "./config.js";
-import { ASR_API } from "./config.js";
-import { MT_API } from "./config.js";
+import {apiUrl} from "./config.js";
 import { TTS_API } from "./config.js";
 
 
 export async function getSourceLanguages() {
-    const response = await fetch(`${Source_Language}`);
+    const response = await fetch(`${apiUrl.sourceLanguage}`);
     return response;
 }
 
 export async function getTargetLanguages() {
-    const response = await fetch(`${Target_Language}`);
+    const response = await fetch(`${apiUrl.TargetLanguage}`);
     return response;
 }
 
 export async function getASR(formData) {
-    const response = await fetch(`${ASR_API}`, {
+    const response = await fetch(`${apiUrl.AsrApi}`, {
       method: 'POST',
       body: formData
     });
@@ -24,7 +21,7 @@ export async function getASR(formData) {
 }
 
 export async function getMT(sourceText, srcLang, tgtLang) {
-    const response = await fetch(`${MT_API}`, {
+    const response = await fetch(`${apiUrl.MtApi}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -41,7 +38,7 @@ export async function getMT(sourceText, srcLang, tgtLang) {
 
 export async function getTTS(ttsText, targetLang, gender) {
     const get_TTS_API = TTS_API(targetLang, gender);
-    const response = await fetch(`${get_TTS_API}`, {
+    const response = await fetch(`${get_TTS_API}` , {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -53,6 +50,8 @@ export async function getTTS(ttsText, targetLang, gender) {
         lang: targetLang,   
         gender: gender        
       })
+    
     });
     return response;
+    
 }
