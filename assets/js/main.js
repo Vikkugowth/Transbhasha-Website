@@ -278,9 +278,9 @@ function updateReviewsDisplay() {
     reviewCard.innerHTML = `
       <div class="flex space-x-1 mb-4">
         ${Array.from(
-          { length: 5 },
-          (_, i) => `<span class="text-yellow-400 ${i < review.stars ? "" : "opacity-30"}">★</span>`,
-        ).join("")}
+      { length: 5 },
+      (_, i) => `<span class="text-yellow-400 ${i < review.stars ? "" : "opacity-30"}">★</span>`,
+    ).join("")}
       </div>
       <blockquote class="text-muted-foreground mb-6 italic">"${review.text}"</blockquote>
       <div>
@@ -419,12 +419,12 @@ class TransbhashaDemo {
     this.voiceGender = document.getElementById("gender")
     this.recordingTimer = document.getElementById("recordingTimer")
     this.demoStatusASR = document.getElementById("demoStatusASR")
-    this.demoStatusMT= document.getElementById('demoStatusMT');
+    this.demoStatusMT = document.getElementById('demoStatusMT');
     this.demoStatusTTS = document.getElementById('demoStatusTTS')
 
   }
 
-  
+
   bindEvents() {
     if (this.micButton) {
       this.micButton.addEventListener("click", () => this.toggleRecording())
@@ -438,12 +438,12 @@ class TransbhashaDemo {
       this.speakerButton.addEventListener("click", () => this.simulateTTS())
     }
 
- 
+
   }
 
   showStatus(message, type = "loading", context = "ASR") {
     let statusBox;
-  
+
     if (context === "MT") {
       statusBox = this.demoStatusMT;
     } else if (context === "TTS") {
@@ -451,26 +451,26 @@ class TransbhashaDemo {
     } else {
       statusBox = this.demoStatusASR;
     }
-  
+
     if (!statusBox) return;
-  
+
     statusBox.textContent = message;
-  
+
     const baseClass = "mt-6 p-4 rounded-lg text-center font-medium";
     const typeClass =
       type === "success"
         ? "bg-green-100 text-green-800 border border-green-200"
         : type === "error"
-        ? "bg-red-100 text-red-800 border border-red-200"
-        : "bg-blue-100 text-blue-800 border border-blue-200";
-  
+          ? "bg-red-100 text-red-800 border border-red-200"
+          : "bg-blue-100 text-blue-800 border border-blue-200";
+
     statusBox.className = `${baseClass} ${typeClass}`;
     statusBox.classList.remove("hidden");
   }
-  
+
   hideStatus(context = "ASR") {
     let statusBox;
-  
+
     switch (context) {
       case "MT":
         statusBox = this.demoStatusMT;
@@ -483,18 +483,18 @@ class TransbhashaDemo {
         statusBox = this.demoStatusASR;
         break;
     }
-  
+
     if (statusBox) {
       statusBox.classList.add("hidden");
     }
   }
-  
-  
+
+
   checkRateLimit() {
     const now = Date.now()
     if (now - this.lastApiCall < this.rateLimitDelay) {
       const remainingTime = Math.ceil((this.rateLimitDelay - (now - this.lastApiCall)) / 1000)
-      this.showStatus(`Please wait ${remainingTime} seconds before making another request`, "error","ASR")
+      this.showStatus(`Please wait ${remainingTime} seconds before making another request`, "error", "ASR")
       return false
     }
     this.lastApiCall = now
@@ -531,7 +531,7 @@ class TransbhashaDemo {
       this.recordingStartTime = Date.now()
 
       // Update UI
-      
+
       this.micButton.querySelector(".btn-text").textContent = "Stop"
       this.showStatus("Recording... Speak now!")
 
@@ -557,7 +557,7 @@ class TransbhashaDemo {
       this.isRecording = false
 
       // Update UI
-      
+
       this.micButton.querySelector(".btn-text").textContent = "Start"
 
       // Stop timer
@@ -569,7 +569,7 @@ class TransbhashaDemo {
     this.recordingTimer.classList.remove("hidden")
 
     this.recordingTimer.textContent = "00:00"
-    
+
 
     this.timerInterval = setInterval(() => {
       if (this.recordingStartTime) {
@@ -604,8 +604,8 @@ class TransbhashaDemo {
       this.showStatus("Error processing audio. Please try again.", "error")
     }
   }
-  
- 
+
+
 
   async simulateASR(audioBlob) {
     const MAX_AUDIO_SIZE = 2 * 1024 * 1024; // 2MB limit
@@ -619,34 +619,34 @@ class TransbhashaDemo {
     const language = this.sourceLanguage.value;
     const mtSourceText = document.getElementById('sourceTextMT');
     const charCount = document.getElementById('charCount');
-    
-  
+
+
     const formData = new FormData();
     formData.append('file', audioBlob, 'recording.wav');
     formData.append('language', language);
     formData.append('vtt', 'true');
     formData.append('model', 'null');
-  
+
     this.showStatus("Recognizing speech...", "loading");
-  
+
     try {
       const response = await getASR(formData);
       const result = await response.json();
       const vttText = result.vtt || '';
       const lines = vttText.split('\n').filter(line => line && !line.includes('-->') && !line.startsWith('WEBVTT'));
       const finalTranscript = lines.join(' ');
-  
+
       this.sourceText.value = finalTranscript;
       this.translateButton.disabled = false;
       this.showStatus("Speech recognized successfully!", "success");
-  
+
       if (mtSourceText && charCount) {
         mtSourceText.value = finalTranscript;
         this.lastMTText = finalTranscript; // Update preserved value
         const trimmedLength = finalTranscript.trim().length;
         charCount.textContent = `${trimmedLength}/100 characters`;
       }
-  
+
     } catch (error) {
       console.error('ASR fetch error:', error);
       this.showStatus("Transcription failed. Please try again.", "error");
@@ -654,36 +654,36 @@ class TransbhashaDemo {
       setTimeout(() => this.hideStatus("ASR"), 3000);
     }
   }
-  
-  
+
+
 
   async simulateMT() {
-    
+
     const sourceTextMT = this.sourceTextMT.value;
     const srcLang = this.sourceLanguage.value;
     const tgtLang = this.targetLanguage.value;
-    
+
     if (!sourceTextMT.trim()) {
-      this.showStatus("No input text provided for translation.", "error","MT");
+      this.showStatus("No input text provided for translation.", "error", "MT");
       return;
     }
-  
+
     this.showStatus("Translating...", "loading", "MT");
 
     try {
-      
-      const response= await getMT(sourceTextMT, srcLang, tgtLang);
+
+      const response = await getMT(sourceTextMT, srcLang, tgtLang);
       const data = await response.json();
       const translated = data.mt_out || 'Translation failed.';
       const truncatedTranslation = translated;
       this.targetText.value = truncatedTranslation;
       const ttsPreview = document.getElementById('ttsPreview');
       ttsPreview.value = truncatedTranslation;
-      ttsPreview.dispatchEvent(new Event("input"));  
+      ttsPreview.dispatchEvent(new Event("input"));
       this.speakerButton.disabled = !ttsPreview.value.trim();
-  
+
       this.showStatus("Translation completed successfully!", "success", "MT");
-     
+
     } catch (error) {
       console.error("MT error:", error);
       this.showStatus("Translation failed. Please try again.", "error", "MT");
@@ -696,37 +696,37 @@ class TransbhashaDemo {
     const ttstext = this.TTSpreview.value;
     const targetLang = this.targetLanguageTTS.value;
     const gender = this.voiceGender.value;
-  
+
     if (!ttstext.trim()) {
       this.showStatus("No text provided for speech synthesis.", "error", "TTS");
       return;
     }
-        
+
     this.showStatus("Generating audio...", "loading", "TTS");
-  
+
     try {
       const response = await getTTS(ttstext, targetLang, gender)
       const data = await response.json();
       console.log("TTS Response:", data);
-  
+
       if (data.audio) {
         const audioSrc = `data:audio/mp3;base64,${data.audio}`;
         const audio = new Audio(audioSrc);
-  
+
         audio.onplay = () => {
           this.showStatus("Playing audio...", "loading", "TTS");
         };
-  
+
         audio.onended = () => {
           this.showStatus("Audio playback completed!", "success", "TTS");
-         
+
         };
-  
+
         audio.onerror = () => {
           this.showStatus("Audio playback failed.", "error", "TTS");
-         
+
         };
-  
+
         audio.play();
       } else {
         this.showStatus("No audio data received.", "error", "TTS");
@@ -737,9 +737,9 @@ class TransbhashaDemo {
     } finally {
       setTimeout(() => this.hideStatus("TTS"), 2000)
     }
-   
+
   }
-    
+
 }
 
 
@@ -749,7 +749,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.getElementById("micButton")) {
     new TransbhashaDemo();
   }
-  
+
 
   // MT charcount
   const mtSourceText = document.getElementById("sourceTextMT");
@@ -757,9 +757,9 @@ document.addEventListener("DOMContentLoaded", () => {
     mtSourceText.setAttribute('maxlength', MAX_MT_CHARS);
 
     mtSourceText.addEventListener("input", () => {
-     updateMTCharCount(); 
+      updateMTCharCount();
     });
-    
+
   }
 
   // TTS charcount
@@ -783,7 +783,7 @@ function updateMTCharCount() {
   const mtSourceText = document.getElementById('sourceTextMT');
   const charCountDiv = document.getElementById('charCount');
   const translateBtn = document.getElementById('translateButton');
-  
+
   if (mtSourceText) {
     const trimmedLength = mtSourceText.value.trim().length;
 
@@ -860,25 +860,25 @@ window.showTab = showTab;
 
 
 function populateSourceLanguages(...selectorIds) {
-    getSourceLanguages()
-      .then(res => res.json())
-      .then(data => {
-        selectorIds.forEach(selectorId => {
-          const select = document.getElementById(selectorId);
-          select.innerHTML = '';
-          Object.entries(data).forEach(([code, info]) => {
-            const option = document.createElement('option');
-            option.value = code;
-            option.textContent = `${code} - ${info.caption}`;
-            if (code === 'english') 
+  getSourceLanguages()
+    .then(res => res.json())
+    .then(data => {
+      selectorIds.forEach(selectorId => {
+        const select = document.getElementById(selectorId);
+        select.innerHTML = '';
+        Object.entries(data).forEach(([code, info]) => {
+          const option = document.createElement('option');
+          option.value = code;
+          option.textContent = `${code} - ${info.caption}`;
+          if (code === 'english')
             option.selected = true;
-            select.appendChild(option);
-          });
+          select.appendChild(option);
         });
-      })
-      .catch(err => console.error('Source language fetch failed:', err));
+      });
+    })
+    .catch(err => console.error('Source language fetch failed:', err));
 }
-  
+
 function populateTargetLanguages(...selectorIds) {
   getTargetLanguages()
     .then(res => res.json())
@@ -891,7 +891,7 @@ function populateTargetLanguages(...selectorIds) {
           const option = document.createElement('option');
           option.value = code;
           option.textContent = `${code} - ${info.caption}`;
-          if (code === 'tamil') 
+          if (code === 'tamil')
             option.selected = true;
           select.appendChild(option);
         });
@@ -899,26 +899,26 @@ function populateTargetLanguages(...selectorIds) {
     })
     .catch(err => console.error('Target language fetch failed:', err));
 }
-  
+
 // Populate both ASR and MT source language selects
 populateSourceLanguages('source-lang', 'sourceLanguageMT');
 
 populateTargetLanguages('targetLanguageMT', 'targetTTS');
 
 
-  function syncDropdown(sourceId, targetId) {
-    const source = document.getElementById(sourceId);
-    const target = document.getElementById(targetId);
-  
-    source.addEventListener('change', () => {
-      target.value = source.value;
-    });
-  }
- 
+function syncDropdown(sourceId, targetId) {
+  const source = document.getElementById(sourceId);
+  const target = document.getElementById(targetId);
+
+  source.addEventListener('change', () => {
+    target.value = source.value;
+  });
+}
+
 syncDropdown('source-lang', 'sourceLanguageMT');
 syncDropdown('targetLanguageMT', 'targetTTS')
-  
-  
+
+
 
 // toggleDemo
 function toggleDemoSection() {

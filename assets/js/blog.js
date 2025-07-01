@@ -65,7 +65,7 @@ const blogPosts = [
     category: "engineering",
     readTime: "10 min read",
     image:
-    "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     featured: false,
   },
   {
@@ -96,7 +96,7 @@ const blogPosts = [
 // Blog functionality
 document.addEventListener("DOMContentLoaded", () => {
   const blogGrid = document.getElementById("blogGrid")
-  
+
   const featuredArticle = document.getElementById("featuredArticle")
   const searchInput = document.getElementById("searchInput")
   const filterButtons = document.querySelectorAll(".filter-btn")
@@ -255,14 +255,14 @@ document.addEventListener("DOMContentLoaded", () => {
       renderBlogPosts()
     })
   })
- 
-// initial render
+
+  // initial render
   const defaultFilterButton = document.querySelector('.filter-btn[data-category="all"]')
-   if (defaultFilterButton) {
+  if (defaultFilterButton) {
     defaultFilterButton.click()
-   } else {
+  } else {
     renderBlogPosts()
-   }
+  }
 
   // Newsletter form
   newsletterForm.addEventListener("submit", (e) => {
@@ -272,7 +272,7 @@ document.addEventListener("DOMContentLoaded", () => {
     e.target.reset()
   })
 
-  
+
 
 
   // Handle window resize for featured article

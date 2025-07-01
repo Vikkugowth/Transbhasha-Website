@@ -166,15 +166,15 @@ document.addEventListener("DOMContentLoaded", () => {
                     <h4 style="font-weight: 600; margin-bottom: 0.75rem;">Requirements:</h4>
                     <ul style="list-style: none; padding: 0; color: var(--muted-foreground); font-size: 0.875rem;">
                         ${position.requirements
-                          .map(
-                            (req) => `
+        .map(
+          (req) => `
                             <li style="margin-bottom: 0.25rem; display: flex; align-items: flex-start; gap: 0.5rem;">
                                 <span style="color: var(--primary); margin-top: 0.125rem;">•</span>
                                 <span>${req}</span>
                             </li>
                         `,
-                          )
-                          .join("")}
+        )
+        .join("")}
                     </ul>
                 </div>
                 

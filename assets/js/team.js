@@ -196,12 +196,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 <div class="expertise-tags" style="display: flex; flex-wrap: wrap; gap: 0.25rem; justify-content: center; margin-bottom: 1.5rem;">
                     ${member.expertise
-                      .map(
-                        (skill) => `
+        .map(
+          (skill) => `
                         <span style="background-color: var(--muted); color: var(--muted-foreground); font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 0.25rem; border: 1px solid var(--border);">${skill}</span>
                     `,
-                      )
-                      .join("")}
+        )
+        .join("")}
                 </div>
                 
                 <div class="social-links" style="display: flex; justify-content: center; gap: 0.75rem;">

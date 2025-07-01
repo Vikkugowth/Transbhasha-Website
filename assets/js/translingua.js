@@ -219,20 +219,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  
+
   function startAutoPlay() {
     if (!autoPlay) return;
-  
+
     clearInterval(autoPlayInterval);
-  
+
     autoPlayInterval = setInterval(() => {
       const isLastStep = currentStep === workflowData.length - 1;
-  
+
       if (isLastStep) {
         clearInterval(autoPlayInterval);
         updateWorkflowDisplay(); // show last step tick
         updateActiveStep();
-  
+
         setTimeout(() => {
           currentStep = 0; // restart
           updateWorkflowDisplay(); // step 0 ticked again
@@ -246,7 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }, 1000);
   }
-  
+
 
   // Add pulse animation
   const style = document.createElement("style")
