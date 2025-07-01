@@ -4,7 +4,7 @@ export function setCssVariable(cssVariableName, value) {
 
 export async function loadThemes() {
   const res = await fetch("/theme.json");
-  return await res.json(); // Returns the theme object { light: {...}, dark: {...} }
+  return await res.json();
 }
 
 export function applyThemeVars(themeData) {
