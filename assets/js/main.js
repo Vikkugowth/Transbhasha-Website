@@ -1,8 +1,8 @@
-import { getSourceLanguages } from "./API.js";
-import { getTargetLanguages } from "./API.js";
-import { getASR } from "./API.js";
-import { getMT } from "./API.js";
-import { getTTS } from "./API.js";
+import { getSourceLanguages } from "./api.js";
+import { getTargetLanguages } from "./api.js";
+import { getASR } from "./api.js";
+import { getMT } from "./api.js";
+import { getTTS } from "./api.js";
 import { loadThemes, applyThemeVars } from './common.js';
 
 

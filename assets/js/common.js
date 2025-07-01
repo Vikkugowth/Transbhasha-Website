@@ -3,7 +3,7 @@ export function setCssVariable(cssVariableName, value) {
 }
 
 export async function loadThemes() {
-  const res = await fetch("/theme.json");
+  const res = await fetch("/assets/constant/theme.json");
   return await res.json();
 }
 
