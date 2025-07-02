@@ -1,0 +1,82 @@
+[
+    {
+      "title": "The Future of Multilingual AI: Breaking Language Barriers in 2024",
+      "excerpt": "Explore how AI-powered language technology is revolutionizing global communication and what the future holds for multilingual content creation.",
+      "author": "Dr. Rajesh Kumar",
+      "date": "December 15, 2023",
+      "category": "ai-technology",
+      "readTime": "8 min read",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "featured": true
+    },
+    {
+      "title": "Building Scalable APIs for Language Processing",
+      "excerpt": "A deep dive into the architectural decisions and engineering challenges we faced while building our API platform.",
+      "author": "Priya Sharma",
+      "date": "December 10, 2023",
+      "category": "engineering",
+      "readTime": "12 min read",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "featured": false
+    },
+    {
+      "title": "Translingua 2.0: Enhanced Video Localization Features",
+      "excerpt": "Announcing new features in Translingua including improved voice synthesis, better subtitle timing, and expanded language support.",
+      "author": "Anita Gupta",
+      "date": "December 5, 2023",
+      "category": "product-updates",
+      "readTime": "6 min read",
+      "image": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "featured": false
+    },
+    {
+      "title": "Understanding Neural Machine Translation for Indian Languages",
+      "excerpt": "How we're tackling the unique challenges of translating between Indian languages using advanced neural networks.",
+      "author": "Dr. Meera Reddy",
+      "date": "November 28, 2023",
+      "category": "research",
+      "readTime": "15 min read",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "featured": false
+    },
+    {
+      "title": "Transbhasha Raises Series A: Our Journey and What's Next",
+      "excerpt": "Reflecting on our journey so far and sharing our vision for the future as we announce our Series A funding round.",
+      "author": "Dr. Rajesh Kumar",
+      "date": "November 20, 2023",
+      "category": "company-news",
+      "readTime": "5 min read",
+      "image": "https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "featured": false
+    },
+    {
+      "title": "Optimizing Speech Recognition for Noisy Environments",
+      "excerpt": "Technical insights into how we improved our ASR accuracy in challenging acoustic conditions.",
+      "author": "Arjun Patel",
+      "date": "November 15, 2023",
+      "category": "engineering",
+      "readTime": "10 min read",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "featured": false
+    },
+    {
+      "title": "The Importance of Cultural Context in AI Translation",
+      "excerpt": "Why context matters in translation and how we're building cultural awareness into our AI models.",
+      "author": "Dr. Meera Reddy",
+      "date": "November 8, 2023",
+      "category": "ai-technology",
+      "readTime": "7 min read",
+      "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "featured": false
+    },
+    {
+      "title": "User Experience Design for Developer Tools",
+      "excerpt": "How we approach UX design for technical products and the lessons we've learned building developer-friendly interfaces.",
+      "author": "Kavya Nair",
+      "date": "October 30, 2023",
+      "category": "product-updates",
+      "readTime": "9 min read",
+      "image": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "featured": false
+    }
+  ]

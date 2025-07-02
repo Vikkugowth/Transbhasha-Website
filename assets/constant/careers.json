@@ -1,0 +1,80 @@
+[
+    {
+      "title": "Senior Machine Learning Engineer",
+      "department": "Engineering",
+      "location": "Bangalore, India",
+      "type": "Full-time",
+      "description": "Lead the development of our next-generation language models and contribute to cutting-edge research in multilingual AI.",
+      "requirements": [
+        "5+ years of ML engineering experience",
+        "Expertise in PyTorch/TensorFlow",
+        "Experience with NLP and speech processing",
+        "Strong programming skills in Python"
+      ]
+    },
+    {
+      "title": "Product Manager - API Platform",
+      "department": "Product",
+      "location": "Bangalore, India",
+      "type": "Full-time",
+      "description": "Drive the product strategy and roadmap for our API platform, working closely with engineering and customer success teams.",
+      "requirements": [
+        "3+ years of product management experience",
+        "Experience with developer tools/APIs",
+        "Strong analytical and communication skills",
+        "Technical background preferred"
+      ]
+    },
+    {
+      "title": "Frontend Developer",
+      "department": "Engineering",
+      "location": "Remote",
+      "type": "Full-time",
+      "description": "Build beautiful, responsive user interfaces for our web applications using modern frontend technologies.",
+      "requirements": [
+        "3+ years of frontend development experience",
+        "Proficiency in React, TypeScript, and modern CSS",
+        "Experience with responsive design",
+        "Knowledge of web performance optimization"
+      ]
+    },
+    {
+      "title": "DevOps Engineer",
+      "department": "Engineering",
+      "location": "Bangalore, India",
+      "type": "Full-time",
+      "description": "Build and maintain our cloud infrastructure, ensuring scalability, reliability, and security of our services.",
+      "requirements": [
+        "4+ years of DevOps/Infrastructure experience",
+        "Experience with AWS/GCP and Kubernetes",
+        "Knowledge of CI/CD pipelines",
+        "Strong scripting skills"
+      ]
+    },
+    {
+      "title": "Research Scientist - NLP",
+      "department": "Research",
+      "location": "Bangalore, India",
+      "type": "Full-time",
+      "description": "Conduct cutting-edge research in natural language processing with focus on Indian languages and publish in top-tier conferences.",
+      "requirements": [
+        "PhD in Computer Science or related field",
+        "Strong publication record in NLP/ML",
+        "Experience with Indian language processing",
+        "Proficiency in research methodologies"
+      ]
+    },
+    {
+      "title": "Sales Development Representative",
+      "department": "Sales",
+      "location": "Mumbai, India",
+      "type": "Full-time",
+      "description": "Generate and qualify leads for our enterprise sales team, building relationships with potential customers.",
+      "requirements": [
+        "2+ years of sales/business development experience",
+        "Excellent communication skills",
+        "Experience with B2B SaaS sales",
+        "Self-motivated and target-driven"
+      ]
+    }
+]

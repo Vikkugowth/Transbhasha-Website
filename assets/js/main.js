@@ -815,49 +815,67 @@ function updateTTSCharCount() {
   }
 }
 
-
-// showtab 
-
-function showTab(tabId, buttonElement, scroll = false) {
+function showTab(tabId, buttonElement) {
   const wrapper = document.getElementById("wholetab");
   const allTabs = ["asrBox", "mtBox", "ttsBox"];
-  let scrollTarget = null;
+  const cardTabsWrapper = document.getElementById("card-tabs"); // hide other section
 
-  // 1. Show tab wrapper
-  if (wrapper) {
-    wrapper.classList.remove("hidden");
-  }
+  // Hide card tab section if open
+  if (cardTabsWrapper) cardTabsWrapper.classList.add("hidden");
 
-  // 2. Toggle tab content
+  if (wrapper) wrapper.classList.remove("hidden");
+
+  // Hide all main tab contents
   allTabs.forEach(id => {
     const el = document.getElementById(id);
     if (el) el.classList.add("hidden");
   });
 
+  // Show active box
   const activeBox = document.getElementById(tabId);
-  if (activeBox) {
-    activeBox.classList.remove("hidden");
-    if (scroll) scrollTarget = activeBox;
-  }
+  if (activeBox) activeBox.classList.remove("hidden");
 
-
-  // 3. Tab button active visual
+  // Highlight current tab button
   document.querySelectorAll(".tab-button").forEach(btn => {
     btn.classList.remove("ring-2", "ring-primary");
   });
   if (buttonElement) {
     buttonElement.classList.add("ring-2", "ring-primary");
   }
-
-  //  4. Scroll AFTER box is visible
-  if (scroll && scrollTarget) {
-    setTimeout(() => {
-      scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 30);
-  }
 }
 window.showTab = showTab;
 
+// Function for card tabs 
+function showTabCard(tabId, buttonElement) {
+  const wrapper = document.getElementById("card-tabs");
+  const allTabs = ["asrBoxCard", "mtBoxCard", "ttsBoxCard"];
+
+  if (wrapper) wrapper.classList.remove("hidden");
+
+  // Hide all card tab contents
+  allTabs.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.add("hidden");
+  });
+
+  // Show active card tab
+  const activeBox = document.getElementById(tabId);
+  if (activeBox) activeBox.classList.remove("hidden");
+
+  // Remove highlight from all card containers
+  document.querySelectorAll(".try-now-button").forEach(btn => {
+    const card = btn.closest(".bg-white, .dark\\:bg-slate-900"); // matches card container
+    if (card) card.classList.remove("ring-2", "ring-primary");
+    
+  });
+
+  // Add highlight to the clicked card's container
+  if (buttonElement) {
+    const card = buttonElement.closest(".bg-white, .dark\\:bg-slate-900");
+    if (card) card.classList.add("ring-2", "ring-primary");
+  }
+}
+window.showTabCard = showTabCard;
 
 function populateSourceLanguages(...selectorIds) {
   getSourceLanguages()
@@ -901,7 +919,7 @@ function populateTargetLanguages(...selectorIds) {
 }
 
 // Populate both ASR and MT source language selects
-populateSourceLanguages('source-lang', 'sourceLanguageMT');
+populateSourceLanguages('source-lang', 'sourceLanguageMT', 'source-lang-card');
 
 populateTargetLanguages('targetLanguageMT', 'targetTTS');
 
@@ -920,12 +938,5 @@ syncDropdown('targetLanguageMT', 'targetTTS')
 
 
 
-// toggleDemo
-function toggleDemoSection() {
-  const section = document.getElementById("demoSection");
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-}
 
 

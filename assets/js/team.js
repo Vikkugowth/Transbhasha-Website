@@ -1,112 +1,21 @@
-// Team data
-const teamMembers = [
-  {
-    name: "Dr. Rajesh Kumar",
-    role: "CEO & Co-Founder",
-    department: "leadership",
-    bio: "Visionary leader with 15+ years in AI and language technology. Former researcher at IIT and Microsoft Research.",
-    expertise: ["AI Strategy", "Business Development", "Product Vision"],
-    social: {
-      linkedin: "#",
-      twitter: "#",
-      email: "rajesh@transbhasha.com",
-    },
-    initials: "RK",
-  },
-  {
-    name: "Priya Sharma",
-    role: "CTO & Co-Founder",
-    department: "leadership",
-    bio: "Technical architect with deep expertise in machine learning and distributed systems. PhD in Computer Science from Stanford.",
-    expertise: ["Machine Learning", "System Architecture", "Team Leadership"],
-    social: {
-      linkedin: "#",
-      github: "#",
-      email: "priya@transbhasha.com",
-    },
-    initials: "PS",
-  },
-  {
-    name: "Arjun Patel",
-    role: "Lead ML Engineer",
-    department: "engineering",
-    bio: "Specialist in neural machine translation and speech recognition. Previously at Google AI and Amazon Alexa.",
-    expertise: ["Neural Networks", "NLP", "Speech Processing"],
-    social: {
-      linkedin: "#",
-      github: "#",
-      email: "arjun@transbhasha.com",
-    },
-    initials: "AP",
-  },
-  {
-    name: "Dr. Meera Reddy",
-    role: "Head of Research",
-    department: "research",
-    bio: "Leading researcher in computational linguistics with 50+ publications. Expert in Indian language processing.",
-    expertise: ["Computational Linguistics", "Research", "Indian Languages"],
-    social: {
-      linkedin: "#",
-      twitter: "#",
-      email: "meera@transbhasha.com",
-    },
-    initials: "MR",
-  },
-  {
-    name: "Vikram Singh",
-    role: "Senior Software Engineer",
-    department: "engineering",
-    bio: "Full-stack developer with expertise in scalable web applications and API development.",
-    expertise: ["Full Stack Development", "API Design", "Cloud Architecture"],
-    social: {
-      linkedin: "#",
-      github: "#",
-      email: "vikram@transbhasha.com",
-    },
-    initials: "VS",
-  },
-  {
-    name: "Anita Gupta",
-    role: "Product Manager",
-    department: "product",
-    bio: "Product strategist with experience in B2B SaaS and developer tools. MBA from IIM Bangalore.",
-    expertise: ["Product Strategy", "User Experience", "Market Research"],
-    social: {
-      linkedin: "#",
-      twitter: "#",
-      email: "anita@transbhasha.com",
-    },
-    initials: "AG",
-  },
-  {
-    name: "Prof. Suresh Iyer",
-    role: "Technical Advisor",
-    department: "advisory",
-    bio: "Professor Emeritus at IISc Bangalore. Pioneer in Indian language computing and natural language processing.",
-    expertise: ["Academic Research", "Language Technology", "Strategic Guidance"],
-    social: {
-      linkedin: "#",
-      email: "suresh@transbhasha.com",
-    },
-    initials: "SI",
-  },
-  {
-    name: "Kavya Nair",
-    role: "UX Designer",
-    department: "product",
-    bio: "Creative designer focused on making complex AI tools accessible and intuitive for users.",
-    expertise: ["UI/UX Design", "User Research", "Design Systems"],
-    social: {
-      linkedin: "#",
-      twitter: "#",
-      email: "kavya@transbhasha.com",
-    },
-    initials: "KN",
-  },
-]
-
 // Team functionality
 document.addEventListener("DOMContentLoaded", () => {
+  
+  let teamMembers = []
+    
+  async function teamMembersData() {
+    try {
+      const response = await fetch("assets/constant/team.json")
+      teamMembers = await response.json()
+      renderTeamMembers() //initial render
+
+    } catch (error) {
+      console.error("Error loading workflow steps:", error)
+    }
+  }
+
+  teamMembersData(); //call fetch function
+
   const teamGrid = document.getElementById("teamGrid")
   const filterButtons = document.querySelectorAll(".filter-btn")
 

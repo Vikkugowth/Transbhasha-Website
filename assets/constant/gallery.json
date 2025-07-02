@@ -1,0 +1,74 @@
+[
+    {
+      "title": "Company Launch Event",
+      "description": "Official launch of Transbhasha with industry leaders and investors",
+      "category": "milestones",
+      "date": "March 2023",
+      "location": "Bangalore, India",
+      "participants": "50+ attendees",
+      "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "title": "API Platform Beta Release",
+      "description": "First beta version of our comprehensive API platform",
+      "category": "product",
+      "date": "June 2023",
+      "location": "Virtual Event",
+      "participants": "Development Team",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "title": "Team Retreat 2023",
+      "description": "Annual team building retreat in the hills of Coorg",
+      "category": "team-events",
+      "date": "August 2023",
+      "location": "Coorg, Karnataka",
+      "participants": "All Team Members",
+      "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "title": "Partnership with TechCorp",
+      "description": "Strategic partnership announcement with leading tech company",
+      "category": "partnerships",
+      "date": "September 2023",
+      "location": "Mumbai, India",
+      "participants": "Leadership Team",
+      "image": "https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "title": "AI Innovation Award",
+      "description": "Recognition for excellence in AI-powered language technology",
+      "category": "recognition",
+      "date": "October 2023",
+      "location": "Delhi, India",
+      "participants": "CEO & CTO",
+      "image": "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "title": "Translingua Product Launch",
+      "description": "Official launch of our flagship video localization platform",
+      "category": "product",
+      "date": "November 2023",
+      "location": "Bangalore, India",
+      "participants": "Product Team",
+      "image": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "title": "Diwali Celebration",
+      "description": "Festival celebration with the entire Transbhasha family",
+      "category": "team-events",
+      "date": "November 2023",
+      "location": "Office, Bangalore",
+      "participants": "All Employees",
+      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "title": "Series A Funding",
+      "description": "Successfully raised Series A funding to accelerate growth",
+      "category": "milestones",
+      "date": "December 2023",
+      "location": "Bangalore, India",
+      "participants": "Investors & Leadership",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    }
+  ]
