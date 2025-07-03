@@ -108,10 +108,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
           </div>
           <div>
-            <h3 style="font-weight: 600; color: ${isActive ? "black" : "var(--foreground)"};">
+            <h3 style="font-weight: 600; color: ${isActive ? "var(--foreground)" : "var(--muted-foreground)"};">
               ${step.title}
             </h3>
-            <p style="font-size: 0.875rem; color: ${isActive ? "rgba(0,0,0,0.9)" : "var(--muted-foreground)"};">
+            <p style="font-size: 0.875rem; color: ${isActive ? "var(--foreground)" : "var(--muted-foreground)"};">
               ${step.description}
             </p>
           </div>

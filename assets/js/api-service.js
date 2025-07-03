@@ -560,7 +560,7 @@ function getReviewsPerPage() {
 function updateReviewsDisplay() {
     reviewsGrid.innerHTML = ""
 
-    for (let i = 0; i < reviewsPerPage; i++) {
+    for (let i = 0; i < Math.min(reviewsPerPage, reviews.length); i++) {
         const reviewIndex = (currentReviewIndex + i) % reviews.length
         const review = reviews[reviewIndex]
 
