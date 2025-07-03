@@ -212,3 +212,4 @@ document.querySelectorAll(".filter-btn").forEach(button => {
     button.classList.remove("bg-gray-200", "text-gray-700");
   });
 });
+

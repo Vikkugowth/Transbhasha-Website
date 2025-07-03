@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Transbhasha</title>
     <meta name="description" content="Learn about Transbhasha's mission to break language barriers through AI-powered language technology.">
+    <script>
+        const theme = localStorage.getItem("theme") || "light";
+        if (theme === "dark") {
+          document.documentElement.classList.add("dark");
+        }
+    </script>        
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/tailwindConfig.js"></script>
+    <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body class="min-h-screen bg-background text-foreground font-sans antialiased">
     <!-- Header -->
@@ -395,7 +402,6 @@
         </div>
     </footer>
     
-    <script src="assets/js/tailwindConfig.js"></script>
-    <script type="module" src="assets/js/main.js"></script>
+    <script  src="assets/js/main.js"></script>
 </body>
 </html>

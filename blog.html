@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Transbhasha</title>
     <meta name="description" content="Insights, updates, and deep dives into AI-powered language technology, engineering challenges, and our journey building the future of multilingual communication.">
+    <script>
+        const theme = localStorage.getItem("theme") || "light";
+        if (theme === "dark") {
+          document.documentElement.classList.add("dark");
+        }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/tailwindConfig.js"></script>
+    <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body class="font-inter bg-background text-foreground duration-300">
     <!-- Header -->
@@ -196,7 +203,7 @@
                     <h2 class="text-4xl font-bold mb-4">Stay Updated</h2>
                     <p class="text-xl text-muted-foreground mb-8">Subscribe to our newsletter to get the latest insights on AI, language technology, and product updates delivered to your inbox.</p>
                     
-                    <form class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
+                    <form class="newsletter-form flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
                         <input type="email" placeholder="Enter your email" required class="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent">
                         <button type="submit" class="bg-primary-600 hover:bg-muted text-white px-6 py-3 rounded-lg font-semibold transition-colors">Subscribe</button>
                     </form>
@@ -278,8 +285,8 @@
         </div>
     </footer>
     
-    <script src="assets/js/tailwindConfig.js"></script>
-    <script type="module" src="assets/js/main.js"></script>
     <script src="assets/js/blog.js"></script>
+    <script src="assets/js/main.js"></script>
+    
 </body>
 </html>

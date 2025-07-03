@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API Services - Transbhasha</title>
     <meta name="description" content="Powerful, scalable APIs for Automatic Speech Recognition, Machine Translation, and Text-to-Speech services. Built for developers, designed for scale.">
+    <script>
+      const theme = localStorage.getItem("theme") || "light";
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    </script>        
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/tailwindConfig.js"></script>
+    <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body class="min-h-screen dark:bg-background dark:text-foreground ">
     <!-- Header (same structure as other pages) -->
@@ -205,9 +212,7 @@
                     <span>Custom vocabulary support</span>
                   </li>
                 </ul>
-                <button onclick="showTabCard('asrBoxCard', this)" class="try-now-button mt-6 px-4 py-1 bg-primary text-white rounded-full mx-auto block font-medium hover:bg-primary/90 transition">
-                  Try now
-                </button>
+              
               </div>
         
               <!-- MT -->
@@ -249,9 +254,7 @@
                     <span>Batch processing support</span>
                   </li>
                 </ul>
-                <button onclick="showTabCard('mtBoxCard', this)" class="try-now-button mt-12 px-4 py-1 bg-primary text-white rounded-full mx-auto block font-medium hover:bg-primary/90 transition">
-                  Try now
-                </button>
+               
               </div>
         
               <!-- TTS -->
@@ -290,138 +293,11 @@
                     <span>SSML support for advanced control</span>
                   </li>
                 </ul>
-                <button onclick="showTabCard('ttsBoxCard', this)" class="try-now-button mt-12 px-4 py-1 bg-primary text-white rounded-full mx-auto block font-medium hover:bg-primary/90 transition">
-                  Try now
-                </button>
+                
               </div>
             </div>
         
-            <!-- Card Tabs Section (Hidden by default) -->
-            <div id="card-tabs" class="hidden mx-auto bg-card max-w-6xl  mt-8 p-8 shadow-lg">
-              <div id="tabContentCard">
-                <div id="asrBoxCard" class="border border-border rounded-2xl p-8 shadow-lg">
-                  <h3 class="text-lg font-semibold mb-[3rem] text-center">Automatic Speech Recognition</h3>
-                  <div class="flex justify-between items-center mb-6 gap-4">
-                    <!-- Source Language + Mic Button -->
-                    <div class="flex items-end space-x-6">
-                      <div>
-                        <label for="source-lang-card" class="block text-sm font-medium text-card-foreground mb-2">Source Language</label>
-                        <select id="source-lang-card" class="w-48 px-3 py-2 border border-border rounded-lg bg-background text-foreground text-sm"></select>
-                      </div>
-                      <button id="micButton" class="flex items-center space-x-2 px-3 py-1 bg-destructive text-white rounded-lg hover:bg-destructive/90 self-end">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                          <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
-                          <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
-                          <line x1="12" y1="19" x2="12" y2="23"/>
-                          <line x1="8" y1="23" x2="16" y2="23"/>
-                        </svg>
-                        <span class="btn-text">Start</span>
-                      </button>
-                    </div>
-                    <div id="recordingTimer" class=" font-mono text-destructive">00:00</div>
-                  </div>
-                  <textarea id="sourceText" placeholder="Transcribed text will appear here..." readonly class="w-full mb-4 h-24 px-3 py-2 border border-border rounded-lg bg-muted text-foreground text-sm resize-none"></textarea>
-                  <div id="demoStatusASR" class="hidden p-4 rounded-lg text-center font-medium"></div>
-                  <div class="p-4 bg-muted rounded-lg border-l-4 border-primary mt-12">
-                    <h4 class="font-semibold text-sm mb-2">Demo Limitations</h4>
-                    <ul class="text-xs text-muted-foreground space-y-1">
-                      <li>• Recording limited to 20 seconds</li>
-                      <li>• Text limited to 50 characters for demo</li>
-                      <li>• Rate limited to prevent abuse</li>
-                      <li>• For full features, contact us for API access</li>
-                    </ul>
-                  </div>
-                </div>
-          
-                <!-- MT Box -->
-                <div id="mtBoxCard" class="border border-border rounded-2xl p-8 shadow-lg">
-                  <h3 class="text-lg font-semibold mb-[3rem] text-center">Machine Translation</h3>
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                      <label for="sourceLanguageMT" class="block text-sm font-medium text-card-foreground mb-2">Source Language</label>
-                      <select id="sourceLanguageMT" class="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground text-sm"></select>
-                    </div>
-                    <div>
-                      <label for="targetLanguageMT" class="block text-sm font-medium text-card-foreground mb-2">Target Language</label>
-                      <select id="targetLanguageMT" class="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground text-sm"></select>
-                    </div>
-                  </div>
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                      <label for="sourceTextMT" class="text-sm font-medium text-card-foreground mb-2">Source Text</label>
-                      <textarea id="sourceTextMT" placeholder="Enter text to translate..." class="w-full h-24 px-3 py-2 border border-border rounded-lg bg-muted text-foreground text-sm resize-none"></textarea>
-                      <div id="charCount" class="text-xs text-muted-foreground mt-1 text-left">0/100 characters</div>
-                    </div>
-                    <div>
-                      <label for="targetTextMT" class="block text-sm font-medium text-card-foreground mb-2">Translated Text</label>
-                      <textarea id="targetTextMT" placeholder="Translation will appear here..." readonly class="w-full h-24 px-3 py-2 border border-border rounded-lg bg-muted text-foreground text-sm resize-none"></textarea>
-                    </div>
-                  </div>
-                  <div class="flex justify-center mb-[2rem]">
-                    <button id="translateButton" disabled class="flex items-center space-x-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
-                      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 8l6 6"/>
-                        <path d="m4 14 6-6 2-3"/>
-                        <path d="M2 5h12"/>
-                        <path d="M7 2h1"/>
-                        <path d="m22 22-5-10-5 10"/>
-                        <path d="M14 18h6"/>
-                      </svg>
-                      <span>Translate</span>
-                    </button>
-                  </div>
-                  <div id="demoStatusMT" class="hidden p-4 rounded-lg text-center font-medium"></div>
-                  <div class="p-4 bg-muted rounded-lg border-l-4 border-primary mt-12">
-                    <h4 class="font-semibold text-sm mb-2">Demo Limitations</h4>
-                    <ul class="text-xs text-muted-foreground space-y-1">
-                      <li>• Translation limited to 100 characters</li>
-                      <li>• Limited language pairs supported</li>
-                      <li>• Rate limited to prevent abuse</li>
-                      <li>• For full features, contact us for API access</li>
-                    </ul>
-                  </div>
-                </div>
-          
-                <!-- TTS Box -->
-                <div id="ttsBoxCard" class="border border-border rounded-2xl p-8 shadow-lg">
-                  <div class="text-center mb-6">
-                    <h3 class="text-lg font-semibold">Text-to-Speech</h3>
-                  </div>
-                  <div class="space-y-4">
-                    <textarea id="ttsPreview" placeholder="Enter text to speech" class="w-full h-24 px-3 py-2 border border-border rounded-lg bg-muted text-foreground text-sm text-left resize-none"></textarea>
-                    <div id="charCountTTS" class="text-xs text-muted-foreground mt-1 text-left">0/100 characters</div>
-                  </div>
-                  <div class="flex flex-wrap items-end justify-center gap-6 my-6">
-                    <div class="flex items-center space-x-2">
-                      <label for="targetTTS" class="text-sm font-medium text-card-foreground">Target Language:</label>
-                      <select id="targetTTS" class="px-3 py-2 border border-border rounded-lg bg-background text-foreground text-sm"></select>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                      <span class="text-md font-medium">Voice:</span>
-                      <select id="gender" class="border border-border rounded-lg px-3 py-2 bg-background">
-                        <option value="female">Female</option>
-                        <option value="male">Male</option>
-                      </select>
-                    </div>
-                    <button id="speakerButton" disabled class="flex items-center space-x-2 px-3 py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
-                      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="11,5 6,9 2,9 2,15 6,15 11,19 11,5" />
-                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
-                      </svg>
-                      <span>Play Audio</span>
-                    </button>
-                  </div>
-                  <div id="demoStatusTTS" class="p-4 rounded-lg text-center font-medium"></div>
-                  <div class="p-4 bg-muted rounded-lg border-l-4 border-primary mt-12">
-                    <h4 class="font-semibold text-sm mb-2">Demo Limitations</h4>
-                    <ul class="text-xs text-muted-foreground space-y-1">
-                      <li>• Speech limited to 300 characters</li>
-                      <li>• Limited language pairs supported</li>
-                      <li>• Rate limited to prevent abuse</li>
-                      <li>• For full features, contact us for API access</li>
-                    </ul>
-                  </div>
-                </div>
+           
               </div>
             </div>
           </div>
@@ -753,7 +629,7 @@
               </div>
           
               <div class="relative">
-                <button id="reviewPrev" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-card border border-border rounded-full shadow-lg hover:bg-muted transition-colors">
+                <button type="button" id="reviewPrev" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-card border border-border rounded-full shadow-lg hover:bg-muted transition-colors">
                   <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polyline points="15,18 9,12 15,6"/>
                   </svg>
@@ -773,6 +649,7 @@
               <div id="reviewDots" class="flex justify-center space-x-2 mt-8 ">
                 <!-- Dots will be populated by JavaScript -->
               </div>
+          
             </div>
         </section>
 
@@ -868,7 +745,10 @@
         </div>
     </footer>
     
-    <script src="assets/js/tailwindConfig.js"></script>
-    <script type="module" src="assets/js/main.js"></script>
+    
+    <script type="module" src="assets/js/api-service.js"></script>
+    <script  src="assets/js/main.js"></script>
+    
+    
 </body>
 </html>
