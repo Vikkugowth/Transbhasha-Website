@@ -522,9 +522,6 @@ syncDropdown('source-lang', 'sourceLanguageMT');
 syncDropdown('targetLanguageMT', 'targetTTS')
 
 
-
-
-
 //customer Reviews
 
 const reviewsGrid = document.getElementById("reviewsGrid")
