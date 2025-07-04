@@ -1,8 +1,8 @@
 // Team functionality
 document.addEventListener("DOMContentLoaded", () => {
-  
+
   let teamMembers = []
-    
+
   async function teamMembersData() {
     try {
       const response = await fetch("assets/constant/team.json")

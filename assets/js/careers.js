@@ -1,8 +1,8 @@
 // Careers functionality
 document.addEventListener("DOMContentLoaded", () => {
-  
+
   let openPositions = []
-    
+
   async function openPositionsData() {
     try {
       const response = await fetch("assets/constant/careers.json")

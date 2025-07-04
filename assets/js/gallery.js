@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   let galleryItems = []
-    
+
   async function galleryItemsData() {
     try {
       const response = await fetch("assets/constant/gallery.json")
@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  
+
 
   const counters = document.querySelectorAll(".count-up");
 

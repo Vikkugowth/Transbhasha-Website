@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-  
+
 // Mobile Menu Toggle
 const mobileMenuToggle = document.getElementById("mobileMenuToggle")
 const mobileMenu = document.getElementById("mobileMenu")

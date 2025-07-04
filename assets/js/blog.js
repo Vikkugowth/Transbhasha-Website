@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   let blogPosts = []
-    
+
   async function blogItemsData() {
     try {
       const response = await fetch("assets/constant/blogs.json")
@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
       renderBlogPosts()
     })
   })
-  
+
   // Newsletter form
   newsletterForm.addEventListener("submit", (e) => {
     e.preventDefault()

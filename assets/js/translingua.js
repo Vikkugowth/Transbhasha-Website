@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   let workflowData = []
-    
+
   async function loadWorkflowData() {
     try {
       const response = await fetch("assets/constant/workflow.json")
       workflowData = await response.json()
-  
+
       updateWorkflowDisplay() //initial render
       updateActiveStep() //initial render
       startAutoPlay() //initial render
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   loadWorkflowData() // //call fetch function
-  
+
   const workflowStepsContainer = document.getElementById("workflowSteps")
   const workflowMobileStepsContainer = document.getElementById("workflowMobileSteps")
   const activeStepIcon = document.getElementById("activeStepIcon")

@@ -1,62 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Translingua - Transbhasha</title>
-    <meta name="description" content="Transform your video content for global audiences with AI-powered translation, subtitling, and voice-over generation across 13+ Indian languages.">
+    <meta name="description"
+        content="Transform your video content for global audiences with AI-powered translation, subtitling, and voice-over generation across 13+ Indian languages.">
     <script>
         const theme = localStorage.getItem("theme") || "light";
         if (theme === "dark") {
-          document.documentElement.classList.add("dark");
+            document.documentElement.classList.add("dark");
         }
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="assets/js/tailwindConfig.js"></script>
-    <link href="assets/css/style.css" rel="stylesheet">   
+    <link href="assets/css/style.css" rel="stylesheet">
 </head>
+
 <body class="font-inter dark:bg-background dark:text-foreground ">
     <!-- Header -->
-    <header class="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header
+        class="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
                 <a href="index.html" class="flex items-center space-x-2">
-                    <svg class="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 8l6 6"/>
-                        <path d="m4 14 6-6 2-3"/>
-                        <path d="M2 5h12"/>
-                        <path d="M7 2h1"/>
-                        <path d="m22 22-5-10-5 10"/>
-                        <path d="M14 18h6"/>
+                    <svg class="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M5 8l6 6" />
+                        <path d="m4 14 6-6 2-3" />
+                        <path d="M2 5h12" />
+                        <path d="M7 2h1" />
+                        <path d="m22 22-5-10-5 10" />
+                        <path d="M14 18h6" />
                     </svg>
                     <span class="text-xl font-bold">Transbhasha</span>
                 </a>
 
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-sm font-medium text-foreground hover:text-primary transition-colors">Home</a>
-                    
+                    <a href="index.html"
+                        class="text-sm font-medium text-foreground hover:text-primary transition-colors">Home</a>
+
                     <!-- Company Dropdown -->
                     <div class="relative group">
-                        <button class="flex items-center space-x-1 text-sm font-medium text-foreground hover:text-primary transition-colors">
+                        <button
+                            class="flex items-center space-x-1 text-sm font-medium text-foreground hover:text-primary transition-colors">
                             <span>Company</span>
                             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="6,9 12,15 18,9"></polyline>
                             </svg>
                         </button>
-                        <div class="absolute top-full left-0 mt-2 w-64 bg-card border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <div
+                            class="absolute top-full left-0 mt-2 w-64 bg-card border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                             <div class="p-2">
                                 <a href="about.html" class="block p-3 rounded-md hover:bg-muted transition-colors">
                                     <div class="font-medium text-card-foreground">About Us</div>
                                     <div class="text-sm text-muted-foreground">Learn about our mission and vision</div>
                                 </a>
                                 <!-- <a href="team.html" class="block p-3 rounded-md hover:bg-muted transition-colors"> -->
-                                <a href="#" class="block p-3 rounded-md hover:bg-muted transition-colors">    
+                                <a href="#" class="block p-3 rounded-md hover:bg-muted transition-colors">
                                     <div class="font-medium text-card-foreground">Our Team</div>
                                     <div class="text-sm text-muted-foreground">Meet the people behind Transbhasha</div>
                                 </a>
                                 <!-- <a href="gallery.html" class="block p-3 rounded-md hover:bg-muted transition-colors"> -->
-                                <a href="#" class="block p-3 rounded-md hover:bg-muted transition-colors">    
+                                <a href="#" class="block p-3 rounded-md hover:bg-muted transition-colors">
                                     <div class="font-medium text-card-foreground">Gallery</div>
                                     <div class="text-sm text-muted-foreground">Our journey in pictures</div>
                                 </a>
@@ -66,56 +74,69 @@
 
                     <!-- Products Dropdown -->
                     <div class="relative group">
-                        <button class="flex items-center space-x-1 text-sm font-medium text-foreground hover:text-primary transition-colors">
+                        <button
+                            class="flex items-center space-x-1 text-sm font-medium text-foreground hover:text-primary transition-colors">
                             <span>Products</span>
                             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="6,9 12,15 18,9"></polyline>
                             </svg>
                         </button>
-                        <div class="absolute top-full left-0 mt-2 w-64 bg-card border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <div
+                            class="absolute top-full left-0 mt-2 w-64 bg-card border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                             <div class="p-2">
-                                <a href="api-services.html" class="block p-3 rounded-md hover:bg-muted transition-colors">
+                                <a href="api-services.html"
+                                    class="block p-3 rounded-md hover:bg-muted transition-colors">
                                     <div class="font-medium text-card-foreground">API Services</div>
                                     <div class="text-sm text-muted-foreground">Powerful APIs for ASR, MT, and TTS</div>
                                 </a>
-                                <a href="translingua.html" class="block p-3 rounded-md hover:bg-muted transition-colors">
+                                <a href="translingua.html"
+                                    class="block p-3 rounded-md hover:bg-muted transition-colors">
                                     <div class="font-medium text-card-foreground">Translingua</div>
-                                    <div class="text-sm text-muted-foreground">Breaking language barriers in video content</div>
+                                    <div class="text-sm text-muted-foreground">Breaking language barriers in video
+                                        content</div>
                                 </a>
                             </div>
                         </div>
                     </div>
 
                     <!-- <a href="careers.html" class="text-sm font-medium text-foreground hover:text-primary transition-colors">Careers</a> -->
-                    <a href="#" class="text-sm font-medium text-foreground hover:text-primary transition-colors">Careers</a>
+                    <a href="#"
+                        class="text-sm font-medium text-foreground hover:text-primary transition-colors">Careers</a>
                     <!-- <a href="blog.html" class="text-sm font-medium text-foreground hover:text-primary transition-colors">Blog</a> -->
-                    <a href="#" class="text-sm font-medium text-foreground hover:text-primary transition-colors">Blog</a>
-                    <a href="contact.html" class="text-sm font-medium text-foreground hover:text-primary transition-colors">Contact</a>
+                    <a href="#"
+                        class="text-sm font-medium text-foreground hover:text-primary transition-colors">Blog</a>
+                    <a href="contact.html"
+                        class="text-sm font-medium text-foreground hover:text-primary transition-colors">Contact</a>
                 </nav>
 
                 <div class="flex items-center space-x-4">
                     <button id="themeToggle" class="p-2 rounded-md hover:bg-muted transition-colors">
-                        <svg class="sun-icon w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="5"/>
-                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                        <svg class="sun-icon w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="5" />
+                            <path
+                                d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
                         </svg>
-                        <svg class="moon-icon w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        <svg class="moon-icon w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
                         </svg>
                     </button>
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-primary-foreground bg-primary rounded-md hover:bg-primary/90 transition-colors">
+                    <a href="#" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-primary-foreground bg-primary rounded-md hover:bg-primary/90 transition-colors">
                         Access API Platform
-                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                          <path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                          <polyline points="15 3 21 3 21 9"/>
-                          <line x1="10" y1="14" x2="21" y2="3"/>
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" y1="14" x2="21" y2="3" />
                         </svg>
                     </a>
                     <button id="mobileMenuToggle" class="md:hidden p-2 rounded-md hover:bg-muted transition-colors">
                         <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="3" y1="6" x2="21" y2="6"/>
-                            <line x1="3" y1="12" x2="21" y2="12"/>
-                            <line x1="3" y1="18" x2="21" y2="18"/>
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <line x1="3" y1="12" x2="21" y2="12" />
+                            <line x1="3" y1="18" x2="21" y2="18" />
                         </svg>
                     </button>
                 </div>
@@ -125,16 +146,30 @@
         <!-- Mobile Menu -->
         <div id="mobileMenu" class="md:hidden border-t border-border bg-background hidden">
             <nav class="px-4 py-4 space-y-2">
-                <a href="index.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Home</a>
-                <a href="about.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">About Us</a>
-                <a href="team.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Our Team</a>
-                <a href="gallery.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Gallery</a>
-                <a href="api-services.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">API Services</a>
-                <a href="translingua.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Translingua</a>
-                <a href="careers.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Careers</a>
-                <a href="blog.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Blog</a>
-                <a href="contact.html" class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Contact</a>
-                <a href="contact.html" class="block mt-4 px-4 py-2 text-sm font-medium text-primary-foreground bg-primary rounded-md hover:bg-primary/90 transition-colors text-center">Get Started</a>
+                <a href="index.html"
+                    class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Home</a>
+                <a href="about.html"
+                    class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">About
+                    Us</a>
+                <a href="team.html"
+                    class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Our
+                    Team</a>
+                <a href="gallery.html"
+                    class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Gallery</a>
+                <a href="api-services.html"
+                    class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">API
+                    Services</a>
+                <a href="translingua.html"
+                    class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Translingua</a>
+                <a href="careers.html"
+                    class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Careers</a>
+                <a href="blog.html"
+                    class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Blog</a>
+                <a href="contact.html"
+                    class="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors">Contact</a>
+                <a href="contact.html"
+                    class="block mt-4 px-4 py-2 text-sm font-medium text-primary-foreground bg-primary rounded-md hover:bg-primary/90 transition-colors text-center">Get
+                    Started</a>
             </nav>
         </div>
     </header>
@@ -145,22 +180,30 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div>
-                        <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up">Translingua - Breaking Language Barriers in Video Content</h1>
-                        <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 animate-fade-in-up animation-delay-100">Transform your video content for global audiences with AI-powered translation, subtitling, and voice-over generation across 13+ Indian languages.</p>
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up">Translingua - Breaking
+                            Language Barriers in Video Content</h1>
+                        <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 animate-fade-in-up animation-delay-100">
+                            Transform your video content for global audiences with AI-powered translation, subtitling,
+                            and voice-over generation across 13+ Indian languages.</p>
                         <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-200">
-                            <a href="contact.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center text-primary-foreground bg-primary rounded-md hover:bg-primary/90 px-8 py-4 text-lg font-semibold transition-colors text-center">
+                            <a href="contact.html" target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center justify-center text-primary-foreground bg-primary rounded-md hover:bg-primary/90 px-8 py-4 text-lg font-semibold transition-colors text-center">
                                 Request Demo
-                                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                  <path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                                  <polyline points="15 3 21 3 21 9"/>
-                                  <line x1="10" y1="14" x2="21" y2="3"/>
+                                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
                                 </svg>
                             </a>
-                            <a href="#workflow" class="border border-slate-300 dark:border-slate-600 px-8 py-4 rounded-lg text-lg font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-center">Learn More</a>
+                            <a href="#workflow"
+                                class="border border-slate-300 dark:border-slate-600 px-8 py-4 rounded-lg text-lg font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-center">Learn
+                                More</a>
                         </div>
                     </div>
                     <div class="animate-fade-in-up animation-delay-300">
-                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Translingua Video Localization" class="rounded-xl shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Translingua Video Localization" class="rounded-xl shadow-2xl">
                     </div>
                 </div>
             </div>
@@ -173,20 +216,26 @@
                     <div class="animate-fade-in-up">
                         <h2 class="text-3xl font-bold mb-6">The Problem We Solve</h2>
                         <p class="text-gray-600 dark:text-gray-300 text-lg mb-4 leading-relaxed">
-                            Content creators and businesses struggle to reach diverse audiences due to language barriers. Traditional video localization is expensive, time-consuming, and often loses the original context and emotion.
+                            Content creators and businesses struggle to reach diverse audiences due to language
+                            barriers. Traditional video localization is expensive, time-consuming, and often loses the
+                            original context and emotion.
                         </p>
                         <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                            Manual translation and voice-over processes can take weeks or months, making it difficult to scale content across multiple languages efficiently.
+                            Manual translation and voice-over processes can take weeks or months, making it difficult to
+                            scale content across multiple languages efficiently.
                         </p>
                     </div>
-                    
+
                     <div class="animate-fade-in-up animation-delay-100">
                         <h2 class="text-3xl font-bold mb-6">Our Solution</h2>
                         <p class="text-gray-600 dark:text-gray-300 text-lg mb-4 leading-relaxed">
-                            Translingua revolutionizes video localization with AI-powered automation. Our platform combines advanced speech recognition, neural machine translation, and natural text-to-speech synthesis to deliver high-quality localized content in minutes, not months.
+                            Translingua revolutionizes video localization with AI-powered automation. Our platform
+                            combines advanced speech recognition, neural machine translation, and natural text-to-speech
+                            synthesis to deliver high-quality localized content in minutes, not months.
                         </p>
                         <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                            With support for 13+ Indian languages and cultural context awareness, we help you maintain authenticity while reaching broader audiences.
+                            With support for 13+ Indian languages and cultural context awareness, we help you maintain
+                            authenticity while reaching broader audiences.
                         </p>
                     </div>
                 </div>
@@ -196,51 +245,54 @@
         <!-- Workflow Section -->
         <section id="workflow" class="py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">How It Works</h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 mb-4">
-                  Our AI-powered workflow transforms your content through intelligent processing steps
-                </p>
-                <div class="inline-block bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-3 py-1 rounded text-sm">
-                  Auto-playing workflow • Click any step to explore
-                </div>
-              </div>
-          
-              <div class="max-w-5xl mx-auto">
-                <!-- Desktop Workflow -->
-                <div class="workflow-desktop hidden lg:block">
-                  <div class="relative">
-                    <!-- Connection line -->
-                    <div class="absolute top-[58px] left-0 right-0 h-0.5 bg-gray-300 dark:bg-gray-600"></div>
-                    <!-- Steps -->
-                   <div class="mt-12">
-                    <div id="workflowSteps" class="grid grid-cols-7 gap-4">
-                      <!-- Steps will be populated by JavaScript -->
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">How It Works</h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 mb-4">
+                        Our AI-powered workflow transforms your content through intelligent processing steps
+                    </p>
+                    <div
+                        class="inline-block bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-3 py-1 rounded text-sm">
+                        Auto-playing workflow • Click any step to explore
                     </div>
-                   </div>
-                  </div>
                 </div>
-          
-                <!-- Mobile Workflow -->
-                <div class="workflow-mobile lg:hidden">
-                  <div id="workflowMobileSteps" class="space-y-4">
-                    <!-- Mobile steps will be populated by JavaScript -->
-                  </div>
-                </div>
-          
-                <!-- Active Step Details -->
-                <div id="workflowDetails" class="mt-8">
-                  <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-8">
-                    <div id="stepContent">
-                      <div class="flex items-center gap-4 mb-4">
-                        <div id="activeStepIcon" class="w-10 h-10 flex items-center justify-center text-primary"></div>
-                        <h3 id="activeStepTitle" class="text-lg font-semibold"></h3>
-                      </div>
-                      <p id="activeStepDescription" class="text-gray-600 dark:text-gray-300"></p>
+
+                <div class="max-w-5xl mx-auto">
+                    <!-- Desktop Workflow -->
+                    <div class="workflow-desktop hidden lg:block">
+                        <div class="relative">
+                            <!-- Connection line -->
+                            <div class="absolute top-[58px] left-0 right-0 h-0.5 bg-gray-300 dark:bg-gray-600"></div>
+                            <!-- Steps -->
+                            <div class="mt-12">
+                                <div id="workflowSteps" class="grid grid-cols-7 gap-4">
+                                    <!-- Steps will be populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
+
+                    <!-- Mobile Workflow -->
+                    <div class="workflow-mobile lg:hidden">
+                        <div id="workflowMobileSteps" class="space-y-4">
+                            <!-- Mobile steps will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Active Step Details -->
+                    <div id="workflowDetails" class="mt-8">
+                        <div
+                            class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-8">
+                            <div id="stepContent">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <div id="activeStepIcon"
+                                        class="w-10 h-10 flex items-center justify-center text-primary"></div>
+                                    <h3 id="activeStepTitle" class="text-lg font-semibold"></h3>
+                                </div>
+                                <p id="activeStepDescription" class="text-gray-600 dark:text-gray-300"></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
         </section>
 
@@ -249,78 +301,99 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold mb-4">Powerful Features</h2>
-                    <p class="text-xl text-gray-600 dark:text-gray-300">Everything you need to localize your video content at scale</p>
+                    <p class="text-xl text-gray-600 dark:text-gray-300">Everything you need to localize your video
+                        content at scale</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-8 hover:shadow-lg transition-shadow animate-fade-in-up">
+                    <div
+                        class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-8 hover:shadow-lg transition-shadow animate-fade-in-up">
                         <div class="mb-6">
-                            <svg class="w-8 h-8 text-primary-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            <svg class="w-8 h-8 text-primary-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                             </svg>
                         </div>
                         <h3 class="text-xl font-semibold mb-4">High-Quality Translation</h3>
-                        <p class="text-gray-600 dark:text-gray-300">Neural machine translation with cultural context awareness for accurate and natural-sounding translations.</p>
+                        <p class="text-gray-600 dark:text-gray-300">Neural machine translation with cultural context
+                            awareness for accurate and natural-sounding translations.</p>
                     </div>
 
-                    <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-8 hover:shadow-lg transition-shadow animate-fade-in-up animation-delay-100">
+                    <div
+                        class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-8 hover:shadow-lg transition-shadow animate-fade-in-up animation-delay-100">
                         <div class="mb-6">
-                          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H2v6h4l5 4V5z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.54 8.46a5 5 0 010 7.07m2.83-9.9a9 9 0 010 12.73" />
-                          </svg>
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H2v6h4l5 4V5z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.54 8.46a5 5 0 010 7.07m2.83-9.9a9 9 0 010 12.73" />
+                            </svg>
                         </div>
                         <h3 class="text-xl font-semibold mb-4">Natural Voice Synthesis</h3>
                         <p class="text-gray-600 dark:text-gray-300">
-                          AI-generated voice-overs that maintain the emotion and tone of the original speaker across all languages.
+                            AI-generated voice-overs that maintain the emotion and tone of the original speaker across
+                            all languages.
                         </p>
-                      </div>
+                    </div>
 
-                    <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-8 hover:shadow-lg transition-shadow animate-fade-in-up animation-delay-200">
+                    <div
+                        class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-8 hover:shadow-lg transition-shadow animate-fade-in-up animation-delay-200">
                         <div class="mb-6">
-                            <svg class="w-8 h-8 text-primary-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <polyline points="12,6 12,12 16,14"/>
+                            <svg class="w-8 h-8 text-primary-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12,6 12,12 16,14" />
                             </svg>
                         </div>
                         <h3 class="text-xl font-semibold mb-4">Lightning Fast Processing</h3>
-                        <p class="text-gray-600 dark:text-gray-300">Process hours of video content in minutes with our optimized AI pipeline and cloud infrastructure.</p>
+                        <p class="text-gray-600 dark:text-gray-300">Process hours of video content in minutes with our
+                            optimized AI pipeline and cloud infrastructure.</p>
                     </div>
 
-                    <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-8 hover:shadow-lg transition-shadow animate-fade-in-up animation-delay-300">
+                    <div
+                        class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-8 hover:shadow-lg transition-shadow animate-fade-in-up animation-delay-300">
                         <div class="mb-6">
-                            <svg class="w-8 h-8 text-primary-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                                <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
-                                <line x1="12" y1="22.08" x2="12" y2="12"/>
+                            <svg class="w-8 h-8 text-primary-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                                <polyline points="3.27,6.96 12,12.01 20.73,6.96" />
+                                <line x1="12" y1="22.08" x2="12" y2="12" />
                             </svg>
                         </div>
                         <h3 class="text-xl font-semibold mb-4">13+ Indian Languages</h3>
-                        <p class="text-gray-600 dark:text-gray-300">Comprehensive support for major Indian languages including Hindi, Tamil, Telugu, Bengali, and more.</p>
+                        <p class="text-gray-600 dark:text-gray-300">Comprehensive support for major Indian languages
+                            including Hindi, Tamil, Telugu, Bengali, and more.</p>
                     </div>
 
-                    <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-8 hover:shadow-lg transition-shadow animate-fade-in-up animation-delay-400">
+                    <div
+                        class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-8 hover:shadow-lg transition-shadow animate-fade-in-up animation-delay-400">
                         <div class="mb-6">
-                            <svg class="w-8 h-8 text-primary-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14,2 14,8 20,8"/>
-                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                <line x1="16" y1="17" x2="8" y2="17"/>
-                                <polyline points="10,9 9,9 8,9"/>
+                            <svg class="w-8 h-8 text-primary-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14,2 14,8 20,8" />
+                                <line x1="16" y1="13" x2="8" y2="13" />
+                                <line x1="16" y1="17" x2="8" y2="17" />
+                                <polyline points="10,9 9,9 8,9" />
                             </svg>
                         </div>
                         <h3 class="text-xl font-semibold mb-4">Subtitle Generation</h3>
-                        <p class="text-gray-600 dark:text-gray-300">Automatically generate accurate subtitles with proper timing and formatting for all supported languages.</p>
+                        <p class="text-gray-600 dark:text-gray-300">Automatically generate accurate subtitles with
+                            proper timing and formatting for all supported languages.</p>
                     </div>
 
-                    <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-8 hover:shadow-lg transition-shadow animate-fade-in-up animation-delay-500">
+                    <div
+                        class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-8 hover:shadow-lg transition-shadow animate-fade-in-up animation-delay-500">
                         <div class="mb-6">
-                            <svg class="w-8 h-8 text-primary-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <svg class="w-8 h-8 text-primary-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                             </svg>
                         </div>
                         <h3 class="text-xl font-semibold mb-4">Enterprise Security</h3>
-                        <p class="text-gray-600 dark:text-gray-300">Bank-grade security with end-to-end encryption, secure processing, and compliance with data protection regulations.</p>
+                        <p class="text-gray-600 dark:text-gray-300">Bank-grade security with end-to-end encryption,
+                            secure processing, and compliance with data protection regulations.</p>
                     </div>
                 </div>
             </div>
@@ -331,56 +404,69 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold mb-4">Perfect for Every Use Case</h2>
-                    <p class="text-xl text-gray-600 dark:text-gray-300">From education to entertainment, Translingua adapts to your content needs</p>
+                    <p class="text-xl text-gray-600 dark:text-gray-300">From education to entertainment, Translingua
+                        adapts to your content needs</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="text-center animate-fade-in-up">
                         <div class="mb-6">
-                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Educational Content" class="w-full h-48 object-cover rounded-xl">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                                alt="Educational Content" class="w-full h-48 object-cover rounded-xl">
                         </div>
                         <h3 class="text-xl font-semibold mb-4">Educational Content</h3>
-                        <p class="text-gray-600 dark:text-gray-300">Make learning accessible across languages with localized educational videos, courses, and training materials.</p>
+                        <p class="text-gray-600 dark:text-gray-300">Make learning accessible across languages with
+                            localized educational videos, courses, and training materials.</p>
                     </div>
 
                     <div class="text-center animate-fade-in-up animation-delay-100">
                         <div class="mb-6">
-                            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Corporate Training" class="w-full h-48 object-cover rounded-xl">
+                            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                                alt="Corporate Training" class="w-full h-48 object-cover rounded-xl">
                         </div>
                         <h3 class="text-xl font-semibold mb-4">Corporate Training</h3>
-                        <p class="text-gray-600 dark:text-gray-300">Deliver consistent training across global teams with localized corporate videos and onboarding content.</p>
+                        <p class="text-gray-600 dark:text-gray-300">Deliver consistent training across global teams with
+                            localized corporate videos and onboarding content.</p>
                     </div>
 
                     <div class="text-center animate-fade-in-up animation-delay-200">
                         <div class="mb-6">
-                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="News & Media" class="w-full h-48 object-cover rounded-xl">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                                alt="News & Media" class="w-full h-48 object-cover rounded-xl">
                         </div>
                         <h3 class="text-xl font-semibold mb-4">News & Media</h3>
-                        <p class="text-gray-600 dark:text-gray-300">Break language barriers in journalism with real-time news translation and multilingual broadcasting.</p>
+                        <p class="text-gray-600 dark:text-gray-300">Break language barriers in journalism with real-time
+                            news translation and multilingual broadcasting.</p>
                     </div>
 
                     <div class="text-center animate-fade-in-up animation-delay-300">
                         <div class="mb-6">
-                            <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Marketing Videos" class="w-full h-48 object-cover rounded-xl">
+                            <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                                alt="Marketing Videos" class="w-full h-48 object-cover rounded-xl">
                         </div>
                         <h3 class="text-xl font-semibold mb-4">Marketing & Advertising</h3>
-                        <p class="text-gray-600 dark:text-gray-300">Expand your brand reach with multilingual marketing videos, product demos, and promotional content.</p>
+                        <p class="text-gray-600 dark:text-gray-300">Expand your brand reach with multilingual marketing
+                            videos, product demos, and promotional content.</p>
                     </div>
 
                     <div class="text-center animate-fade-in-up animation-delay-400">
                         <div class="mb-6">
-                            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Entertainment" class="w-full h-48 object-cover rounded-xl">
+                            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                                alt="Entertainment" class="w-full h-48 object-cover rounded-xl">
                         </div>
                         <h3 class="text-xl font-semibold mb-4">Entertainment</h3>
-                        <p class="text-gray-600 dark:text-gray-300">Localize movies, web series, documentaries, and entertainment content for diverse audiences.</p>
+                        <p class="text-gray-600 dark:text-gray-300">Localize movies, web series, documentaries, and
+                            entertainment content for diverse audiences.</p>
                     </div>
 
                     <div class="text-center animate-fade-in-up animation-delay-500">
                         <div class="mb-6">
-                            <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Social Media" class="w-full h-48 object-cover rounded-xl">
+                            <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                                alt="Social Media" class="w-full h-48 object-cover rounded-xl">
                         </div>
                         <h3 class="text-xl font-semibold mb-4">Social Media</h3>
-                        <p class="text-gray-600 dark:text-gray-300">Amplify your social media presence with localized content for YouTube, Instagram, and other platforms.</p>
+                        <p class="text-gray-600 dark:text-gray-300">Amplify your social media presence with localized
+                            content for YouTube, Instagram, and other platforms.</p>
                     </div>
                 </div>
             </div>
@@ -390,10 +476,16 @@
         <section class="py-20 dark:bg-muted bg-gray-50 ">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-4xl text-black dark:text-white font-bold mb-4">Ready to Transform Your Content?</h2>
-                <p class="text-xl text-gray-600 dark:text-white  bg mb-8 max-w-2xl mx-auto">Join thousands of content creators and businesses who trust Translingua to break language barriers and reach global audiences.</p>
+                <p class="text-xl text-gray-600 dark:text-white  bg mb-8 max-w-2xl mx-auto">Join thousands of content
+                    creators and businesses who trust Translingua to break language barriers and reach global audiences.
+                </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="contact.html" class="text-primary-foreground bg-primary rounded-md hover:bg-primary/90 px-8 py-4 rounded-lg text-lg font-semibold transition-colors">Start Free Trial</a>
-                    <a href="contact.html" class="border border-slate-300 dark:border-slate-600 px-8 py-4 rounded-lg text-lg font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-center">Request Demo</a>
+                    <a href="contact.html"
+                        class="text-primary-foreground bg-primary rounded-md hover:bg-primary/90 px-8 py-4 rounded-lg text-lg font-semibold transition-colors">Start
+                        Free Trial</a>
+                    <a href="contact.html"
+                        class="border border-slate-300 dark:border-slate-600 px-8 py-4 rounded-lg text-lg font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-center">Request
+                        Demo</a>
                 </div>
             </div>
         </section>
@@ -405,27 +497,36 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <a href="index.html" class="flex items-center space-x-2 mb-4">
-                        <svg class="w-6 h-6 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 8l6 6"/>
-                            <path d="m4 14 6-6 2-3"/>
-                            <path d="M2 5h12"/>
-                            <path d="M7 2h1"/>
-                            <path d="m22 22-5-10-5 10"/>
-                            <path d="M14 18h6"/>
+                        <svg class="w-6 h-6 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 8l6 6" />
+                            <path d="m4 14 6-6 2-3" />
+                            <path d="M2 5h12" />
+                            <path d="M7 2h1" />
+                            <path d="m22 22-5-10-5 10" />
+                            <path d="M14 18h6" />
                         </svg>
                         <span class="text-xl font-bold">Transbhasha</span>
                     </a>
-                    <p class="dark:text-gray-400">Breaking language barriers in digital content through AI-powered transcription, translation, and voice-over services.</p>
+                    <p class="dark:text-gray-400">Breaking language barriers in digital content through AI-powered
+                        transcription, translation, and voice-over services.</p>
                 </div>
 
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
                     <nav class="space-y-2">
-                        <a href="about.html" class="block dark:text-gray-400 dark:hover:text-white hover:text-blue-700 transition-colors">About Us</a>
-                        <a href="api-services.html" class="block dark:text-gray-400 dark:hover:text-white hover:text-blue-700 transition-colors">API Services</a>
-                        <a href="translingua.html" class="block dark:text-gray-400 dark:hover:text-white hover:text-blue-700 transition-colors">Translingua</a>
-                        <a href="careers.html" class="block dark:text-gray-400 dark:hover:text-white hover:text-blue-700 transition-colors">Careers</a>
-                        <a href="blog.html" class="block dark:text-gray-400 dark:hover:text-white hover:text-blue-700 transition-colors">Blog</a>
+                        <a href="about.html"
+                            class="block dark:text-gray-400 dark:hover:text-white hover:text-blue-700 transition-colors">About
+                            Us</a>
+                        <a href="api-services.html"
+                            class="block dark:text-gray-400 dark:hover:text-white hover:text-blue-700 transition-colors">API
+                            Services</a>
+                        <a href="translingua.html"
+                            class="block dark:text-gray-400 dark:hover:text-white hover:text-blue-700 transition-colors">Translingua</a>
+                        <a href="careers.html"
+                            class="block dark:text-gray-400 dark:hover:text-white hover:text-blue-700 transition-colors">Careers</a>
+                        <a href="blog.html"
+                            class="block dark:text-gray-400 dark:hover:text-white hover:text-blue-700 transition-colors">Blog</a>
                     </nav>
                 </div>
 
@@ -434,21 +535,22 @@
                     <div class="space-y-2">
                         <div class="flex items-center space-x-2">
                             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                <polyline points="22,6 12,13 2,6"/>
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
                             </svg>
                             <span class="dark:text-gray-400">info@transbhasha.com</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                             </svg>
                             <span class="dark:text-gray-400">+91 9940447420</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                <circle cx="12" cy="10" r="3"/>
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
                             </svg>
                             <span class="dark:text-gray-400">Chennai, India</span>
                         </div>
@@ -458,8 +560,12 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Legal</h4>
                     <nav class="space-y-2">
-                        <a href="#" class="block dark:text-gray-400 dark:hover:text-white hover:text-blue-700 transition-colors">Privacy Policy</a>
-                        <a href="#" class="block dark:text-gray-400 dark:hover:text-white transition-colors hover:text-blue-700">Terms of Service</a>
+                        <a href="#"
+                            class="block dark:text-gray-400 dark:hover:text-white hover:text-blue-700 transition-colors">Privacy
+                            Policy</a>
+                        <a href="#"
+                            class="block dark:text-gray-400 dark:hover:text-white transition-colors hover:text-blue-700">Terms
+                            of Service</a>
                     </nav>
                 </div>
             </div>
@@ -469,10 +575,10 @@
             </div>
         </div>
     </footer>
-    
-    <script src="assets/js/translingua.js"></script>
-    <script  src="assets/js/main.js"></script>
-    
-</body>
-</html>
 
+    <script src="assets/js/translingua.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

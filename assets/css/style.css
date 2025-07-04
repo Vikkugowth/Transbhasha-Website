@@ -1,18 +1,18 @@
 :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 84% 4.9%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-  }
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --primary: 221.2 83.2% 53.3%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222.2 84% 4.9%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+}
 
 .dark {
   --background: 222.2 84% 4.9%;
@@ -31,31 +31,31 @@
 }
 
 /*Animationclasses*/
-.animate-fade-in-up{
-opacity:0;
-transform:translateY(30px);
-transition:opacity0.6seas,transform0.6sease;
+.animate-fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity0.6seas, transform0.6sease;
 }
 
-.animate-fade-in-up.visible{
-opacity:1;
-transform:translateY(0);
+.animate-fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /*Customscrollbar*/
-::-webkit-scrollbar{
-width:8px;
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-::-webkit-scrollbar-track{
-background:hsl(var(--muted));
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
 }
 
-::-webkit-scrollbar-thumb{
-background:hsl(var(--border));
-border-radius:4px;
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb:hover{
-background:hsl(var(--muted-foreground));
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
 }
